@@ -1,0 +1,18 @@
+@import '../bower_components/normalize.css/normalize';
+
+@import 'partials/helpers/mixins';
+@import 'partials/helpers/variables';
+@import 'partials/helpers/placeholders';
+@import 'partials/helpers/fonts';
+@import 'partials/helpers/global_settings';
+
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/sidebar';
+@import 'partials/posts';
+@import 'partials/post_formats';
+
+@import 'partials/page_about';
+@import 'partials/page_portfolio';
+@import 'partials/page_blog';
+@import 'partials/page_contact';

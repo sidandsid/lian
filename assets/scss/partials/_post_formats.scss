@@ -1,0 +1,44 @@
+//Standard format
+.format-standard{}
+
+//Status format
+.format-status{}
+
+//Video & Audio format
+.format-video, .format-audio{
+
+  //.post-content{
+  //  position: relative;
+  //  @include size(100%, 0);
+  //  padding-bottom: 56.25%;
+  //
+  //  iframe{
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    @include size(100%, 100%);
+  //    border: none;
+  //    outline: none;
+  //    padding: 0;
+  //  }
+  //}
+}
+
+//Image format
+.format-image{}
+
+//Gallery format
+.format-gallery{
+  //modifying Flickity slider default controls
+  //.flickity-prev-next-button{
+  //  &.previous{}
+  //  &.next{}
+  //  & .arrow{}
+  //}
+}
+
+//Link format
+.format-link{}
+
+//Quote format
+.format-quote{}
