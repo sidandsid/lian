@@ -1,1 +1,245 @@
-.header{}
+.header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0 ,0, 0.75);
+  padding: 20px 5%;
+
+  @include break-max(tablet-l){ min-height: 50px; }
+  @include break-min(tablet-l){ min-height: 90px; }
+}
+
+//Header logo
+.header-logo{
+  img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+//Header nav
+.header-nav{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+//Header navigation menu
+.header-menu{
+
+  &__burger{
+    @include flex(row, center);
+    @include size(30px, 30px);
+    cursor: pointer;
+    margin-right: 15px;
+
+    @include break-min(tablet-l){ display: none; }
+  }
+
+  &__burger-line{
+    position: relative;
+    display: block;
+    @include size(100%, 3px);
+    background-color: $icon-color;
+    border-radius: 5px;
+    pointer-events: none;
+
+    &:before, &:after{
+      position: absolute;
+      content: '';
+      top: -8px;
+      left: 0;
+      @include size(100%, 3px);
+      background-color: $icon-color;
+      transition: .4s ;
+    }
+
+    &:after{
+      top: auto;
+      bottom: -8px;
+    }
+
+    &.clicked{
+
+      &:before{
+        transform: translate(0, -5px);
+        transition: .4s ;
+      }
+
+      &:after{
+        transform: translate(0, 5px);
+        transition: .4s ;
+      }
+    }
+  }
+
+  &__items{
+
+    @include break-max(tablet-l){
+      position: absolute;
+      visibility: hidden;
+      top: 80%;
+      right: 0;
+      left: 0;
+      opacity: 0;
+      background-color: #fff;
+      z-index: 1;
+      margin: 0 auto;
+      transition: .4s;
+    }
+
+    &.active{
+      visibility: visible;
+      top: calc(100% + 1px);
+      opacity: 1;
+      transition: .4s;
+    }
+  }
+
+  ul{
+    @include break-min(mobile-m){
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include break-max(tablet-l){ padding: 20px 5%; }
+  }
+
+  li{
+    @include break-max(mobile-m){ text-align: center; }
+    @include break-max(tablet-l){ margin: 10px 30px 10px 0; }
+
+    @include break-min(tablet-l){
+      margin-right: 43px;
+
+      &:first-child{
+        position: relative;
+
+        &:before{
+          position: absolute;
+          content: '';
+          top: 50.5%;
+          left: -40px;
+          transform: translate(0, -50%);
+          @include size(22px, 1px);
+          background-color: $accent-color;
+        }
+
+        a{ color: $accent-color; }
+      }
+    }
+  }
+
+  a{
+    @include font(14px, 700, $font-color-primary, $font-primary);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color .3s;
+
+    @include hover-color($accent-color);
+  }
+}
+
+//Header search
+.header-search{
+
+  &__icon{
+    @include flex(row, center);
+    @include size(35px, 35px);
+
+    svg{
+      fill: $icon-color;
+      cursor: pointer;
+
+      @include break-max(tablet-l){ @include size(20px, 20px); }
+      @include break-min(tablet-l){ @include size(14px, 14px); }
+      @include hover-fill($accent-color);
+    }
+  }
+
+  &__form{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 80%;
+    right: 0;
+    left: 0;
+    @include flex(row, center);
+    @include size(100%, 100%);
+    background-color: #fff;
+    margin: 0 auto;
+    transition: .4s;
+
+    &.active{
+      visibility: visible;
+      opacity: 1;
+      top: calc(100% + 1px);
+      transition: .4s;
+    }
+  }
+
+  &__input{
+    position: relative;
+    display: block;
+    height: 70%;
+    @include font(18px, 300, $font-color-primary, $font-primary);
+    font-style: italic;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    @include break-max(tablet-l){ width: 55%; }
+    @include break-min(tablet-l){ width: 70%; }
+
+    &::placeholder{
+      color: $font-color-primary;
+    }
+
+    &:focus{
+      @include border(solid, 0 0 1px 0, $icon-color);
+    }
+  }
+
+  &__btn{
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include break-min(tablet-l){ transform: translate(0, 5px); }
+
+    &.search{
+      svg{
+        @include size(22px, 22px);
+        fill: $icon-color;
+        margin: 0 10px;
+      }
+    }
+
+    &.close{
+      @include size(23px, 23px);
+
+      &:before, &:after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%) rotate(45deg);
+        @include size(23px, 3px);
+        background-color: $icon-color;
+        border-radius: 3px;
+      }
+
+      &:after{
+        transform: translate(0, -50%) rotate(-45deg);
+      }
+    }
+  }
+}
