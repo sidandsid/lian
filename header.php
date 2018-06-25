@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Adding svg sprite -->
-    <?php get_template_part( 'assets/svg/sprite.svg.php' ); ?>
+    <?php get_template_part( 'assets/svg/sprite.svg' ); ?>
 
     <header class="header">
         <!-- Header logo widget -->

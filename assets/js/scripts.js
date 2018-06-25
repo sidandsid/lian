@@ -8,4 +8,3 @@ jQuery(document).ready(function(){
     //= partials/social-media-icons.js
     //= partials/page-contact.js
 });
-
