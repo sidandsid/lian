@@ -89,7 +89,7 @@
   }
 
   @else if $point == laptop-l{
-    @media screen and (min-width: 1500px){@content;}
+    @media screen and (min-width: 1600px){@content;}
   }
 }
 
@@ -132,6 +132,6 @@
   }
 
   @else if $point == laptop-l{
-    @media screen and (max-width: 1499px){@content;}
+    @media screen and (max-width: 1599px){@content;}
   }
 }

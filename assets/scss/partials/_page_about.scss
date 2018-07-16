@@ -1,0 +1,242 @@
+.content-wrapper.about-page{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: $base-color;
+  padding: 75px 5%;
+
+  @include break-min(laptop-l){ padding: 75px 225px; }
+}
+
+
+.about-image{
+  max-width: 530px;
+  max-height: 600px;
+  overflow: hidden;
+
+  @include break-max(tablet-l){
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+  }
+
+  @include break-min(tablet-l){
+    width: 47.5%;
+  }
+
+  img{
+    @include size(100%, 100%);
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}
+
+.about-info{
+  @include break-max(tablet-l){ width: 90%; }
+
+  @include break-min(tablet-l){
+    width: 52.5%;
+    padding-left: 54px;
+  }
+}
+
+.about-story{
+  padding-top: 5px;
+  margin-bottom: 28px;
+
+  &__title{
+    @include font(18px, 300, $accent-color, $font-primary);
+    text-transform: uppercase;
+    letter-spacing: 5.7px;
+    word-spacing: 7px;
+    margin-bottom: 32px;
+  }
+
+  &__text{
+    @include font(14px, 500, $font-color-primary, $font-primary);
+    line-height: 220%;
+    word-spacing: 1.5px;
+
+    &:not(:last-child){
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.about-skills{
+
+  &__title{
+    @include font(18px, 300, $accent-color, $font-primary);
+    text-transform: uppercase;
+    letter-spacing: 5.7px;
+    word-spacing: 7px;
+    margin-bottom: 37px;
+  }
+
+  &__item{
+    position: relative;
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  &__item-title{
+    display: block;
+    @include font(16px, 700, #2f302f, $font-primary);
+    margin-bottom: 17px;
+  }
+
+  &__item-line{
+    position: relative;
+    display: block;
+    @include size(100%, 10px);
+    background-color: #ebebeb;
+
+    &:before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translate(0, -50%);
+      @include size(4px, 4px);
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 0 4px rgba(#000, 1);
+      z-index: 1 ;
+    }
+
+    &:after{
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 2px;
+      transform: translate(0, -50%);
+      height: 2px;
+      background-color: #a1a1a1;
+    }
+
+    &.photoshop{
+      &:before{ left: calc(88% + 6px); }
+      &:after{ width: 88%; }
+    }
+
+    &.branding{
+      &:before{ left: calc(93% + 6px); }
+      &:after{ width: 93%; }
+    }
+
+    &.photography{
+      &:before{ left: calc(50% + 6px); }
+      &:after{ width: 50%; }
+    }
+
+    &.web-design{
+      &:before{ left: calc(82% + 6px); }
+      &:after{ width: 82%; }
+    }
+  }
+
+  &__item-percent{
+    position: absolute;
+    top: -3px;
+    right: 0;
+    @include flex(row, center);
+    @include size(40px, 21px);
+    @include font(12px, 400, #fff, $font-secondary);
+    background-color: #041608;
+
+    &:after{
+      position: absolute;
+      content: '';
+      bottom: -8px;
+      left: 0;
+      @include size(0, 0);
+      @include border(solid, 9px 0 9px 9px, transparent transparent transparent #041608);
+    }
+
+    &.photoshop{ left: calc(88% + 7px); }
+    &.branding{ left: calc(93% + 7px);  }
+    &.photography{ left: calc(50% + 7px); }
+    &.web-design{ left: calc(82% + 7px); }
+  }
+}
+
+.about-team{
+  @include flex(column, center);
+  width: 100%;
+  margin-top: 70px;
+
+  &__title{
+    width: 90%;
+    @include font(30px, 400, $accent-color, $font-primary);
+    text-transform: uppercase;
+    letter-spacing: 11px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  &__text{
+    @include font(14px, 400, $font-color-primary, $font-primary);
+    line-height: 220%;
+    text-align: center;
+    word-spacing: 1.5px;
+    margin: 0 auto 58px auto;
+
+    @include break-max(tablet-l){ width: 90%; }
+    @include break-min(tablet-l){ width: 55%; }
+  }
+
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item{
+    @include flex(column, center);
+
+    @include break-max(laptop-m){
+      width: 310px;
+      margin: 0 10px 45px 10px;
+    }
+
+    @include break-min(laptop-m){
+      width: 358px;
+      margin-bottom: 25px;
+
+      &:not(:last-child){
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__item-img{
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    @include size(100%, 440px);
+    background-color: #eeeeee;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  &__item-name{
+    display: block;
+    width: 80%;
+    @include font(24px, 300, #041608, $font-primary);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__item-position{
+    display: block;
+    width: 80%;
+    @include font(16px, 700, $font-color-primary, $font-primary);
+    margin-bottom: 13px;
+  }
+
+  &__item-text{
+    display: block;
+    width: 80%;
+    @include font(14px, 400, #9c9c9c, $font-primary);
+    line-height: 175%;
+  }
+}
