@@ -6,5 +6,6 @@ jQuery(document).ready(function(){
     //= partials/sidebar.js
     //= partials/posts.js
     //= partials/social-media-icons.js
-    //= partials/page-contact.js
 });
+
+//= partials/page-contact.js
