@@ -3,3 +3,25 @@
     display: none;
   }
 }
+
+%sidebar-title{
+  position: relative;
+  @include flex(row, center);
+  @include size(100%, 40px);
+  @include font(18px, 300, #000, $font-primary);
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  background-color: #ebebeb;
+  margin-bottom: 25px;
+
+  &:after{
+    position: absolute;
+    content: '';
+    @include size(0, 0);
+    @include border(solid, 10px 10px 0 10px, #ebebeb transparent transparent transparent);
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
