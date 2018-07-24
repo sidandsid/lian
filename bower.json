@@ -13,7 +13,9 @@
   ],
   "dependencies": {
     "jquery": "3.*",
-    "normalize.css": "*"
+    "normalize.css": "*",
+    "masonry-layout": "masonry#^4.2.2",
+    "isotope-layout": "^3.0.6"
   },
   "devDependencies": {
     "flickity": "^2.1.2"

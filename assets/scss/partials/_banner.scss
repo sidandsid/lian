@@ -5,11 +5,16 @@
   justify-content: flex-start;
   align-items: flex-start;
   align-content: center;
+  width: 100%;
   min-height: 350px;
   overflow: hidden;
   padding: 5%;
 
   @include break-min(laptop-l){ padding: 0 225px; }
+
+  &.portfolio{
+    @include break-min(laptop-l){ padding: 0 230px; }
+  }
 
   &__title{
     display: inline-block;

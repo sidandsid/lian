@@ -1,0 +1,129 @@
+.content-wrapper.portfolio-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $base-color;
+  padding: 70px 5%;
+
+  @include break-min(laptop-l){ padding: 70px 230px; }
+}
+
+.post-wrapper.portfolio-page{
+  width: 100%;
+  max-width: 1140px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  .post{
+    position: relative;
+    background-color: $accent-color;
+
+    @include break-max(mobile-m){ width: 310px; }
+    @include break-min(mobile-m){ width: $post-width; }
+
+    &:after{
+      position: absolute;
+      content: '+';
+      @include flex(row, center);
+      @include size(100%, 100%);
+      top: 0;
+      left: 0;
+      color: #fff;
+      font-weight: 300;
+      font-size: 76px;
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s opacity;
+    }
+
+    &:hover{
+      .post-featured-image{
+        opacity: .6;
+        transition: .3s opacity;
+      }
+
+      &:after{
+        opacity: 1;
+        transition: .3s opacity;
+      }
+    }
+  }
+}
+
+.portfolio-filter{
+  display: flex;
+  width: 100%;
+  @include border(solid, 1px 0 1px 0, $border-color);
+  padding-top: 23px;
+  margin-bottom: 32px;
+
+  @include break-max(419px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include break-min(420px){
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include break-min(tablet-m){
+    justify-content: center;
+    padding: 23px 5% 0 5%;
+  }
+
+  &__btn{
+    position: relative;
+    @include font(14px, 700, $font-color-primary, $font-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 16px;
+
+    @include hover-color($accent-color);
+
+    &:not(:last-child){
+      margin-right: 33px;
+
+      @include break-min(420px){
+        &:after{
+          position: absolute;
+          content: '';
+          top: 50%;
+          right: -20px;
+          transform: translate(0, -50%) rotate(20deg);
+          @include size(1px, 30px);
+          background-color: $border-color;
+        }
+      }
+    }
+
+    &.active{
+      color: $accent-color;
+    }
+  }
+}
+
+.portfolio-load-btn{
+  @include size(125px, 30px);
+  @include font(13px, 700, #fff, $font-primary);
+  text-transform: uppercase;
+  background-color: #959595;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s;
+
+  @include hover{
+    letter-spacing: .8px;
+    transition: .3s;
+  }
+
+  @include break-max(laptop-l){ margin-bottom: 40px; }
+  @include break-min(laptop-l){ margin-bottom: 85px; }
+}
