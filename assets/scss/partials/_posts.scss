@@ -1,0 +1,125 @@
+.post{
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 35px;
+
+  @include break-min(laptop-m){ width: $post-width; }
+
+  &.hidden{
+    display: none;
+  }
+}
+
+.post-featured-image{
+  @include size(100%, auto);
+  overflow: hidden;
+  transition: .3s opacity;
+
+  img{
+    @include size(100%, auto);
+    vertical-align: bottom;
+    object-fit: cover;
+  }
+}
+
+.post-content{
+  @include font(14px, 400, $font-color-primary, $font-primary);
+  line-height: 170%;
+  padding: 20px 35px 40px 45px;
+}
+
+.post-meta{
+  position: relative;
+  display: inline-block;
+  @include font(14px, 500, #fff, $font-primary);
+  text-transform: uppercase;
+  z-index: 1;
+  padding: 0 5%;
+  margin-bottom: 20px;
+
+  &:after{
+    position: absolute;
+    content: '';
+    @include size(100%, 130%);
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translate(0, -50%);
+    background-color: #000;
+    border-radius: 5px;
+    z-index: -1;
+    margin: 0 auto;
+  }
+
+}
+
+.post-title{
+  display: block;
+  @include font(20px, 600, $font-color-accent, $font-primary);
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.post-author{
+  display: block;
+  @include font(13px, 400, #cccccc, $font-primary);
+  margin-bottom: 35px;
+
+  svg{
+    @include size(20px, 20px);
+    fill: $post-icon-color;
+    transform: translate(0, 2px);
+    margin-right: 7px;
+  }
+
+  a{
+    color: #cccccc;
+    text-decoration: none;
+  }
+}
+
+.more-link{
+  @include font(14px, 400, $font-color-primary, $font-primary);
+  text-decoration: none;
+  line-height: 170%;
+}
+
+.post-footer{
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.post-date{
+  position: absolute;
+  top: 0;
+  left: 40px;
+  @include font(13px, 400, #9a9a9a, $font-primary);
+
+  svg{
+    @include size(17px, 17px);
+    fill: $post-icon-color;
+    margin-right: 7px;
+  }
+}
+
+.post-share{
+  position: absolute;
+  top: 0;
+  right: 65px;
+
+  svg{
+    @include size(20px, 20px);
+    fill: $post-icon-color;
+  }
+}
+
+.post-like{
+  position: absolute;
+  top: 0;
+  right: 35px;
+
+  svg{
+    @include size(20px, 20px);
+    fill: $post-icon-color;
+  }
+}

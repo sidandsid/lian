@@ -8,8 +8,8 @@ jQuery(document).ready(function(){
     //= partials/sidebar.js
     //= partials/posts.js
     //= partials/social-media-icons.js
-    //= partials/page-portfolio.js
     //= partials/page-blog.js
+    //= partials/page-portfolio.js
 });
 
 //= partials/page-contact.js
