@@ -4,6 +4,55 @@
   }
 }
 
+%main-title{
+  display: inline-block;
+  max-width: 80%;
+  font-weight: 300;
+  color: #fff;
+  font-family: $font-primary;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background-color: $accent-color;
+
+  @include break-max(tablet-m){
+    max-width: 90%;
+    font-size: 28px;
+  }
+
+  @include break-min(tablet-m){
+    max-width: 75%;
+    font-size: 34px;
+  }
+
+  @include break-min(laptop-m){
+    font-size: 48px;
+  }
+}
+
+%main-subtitle{
+  width: 80%;
+  font-weight: 400;
+  color: $accent-color;
+  font-family: $font-primary;
+  text-transform: uppercase;
+  letter-spacing: 6.2px;
+  word-spacing: 10px;
+
+  @include break-max(tablet-m){
+    width: 90%;
+    font-size: 14px;
+  }
+
+  @include break-min(tablet-m){
+    width: 75%;
+    font-size: 14px;
+  }
+
+  @include break-min(laptop-m){
+    font-size: 18px;
+  }
+}
+
 %sidebar-title{
   position: relative;
   @include flex(row, center);

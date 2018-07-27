@@ -1,0 +1,151 @@
+.home-slider{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &:focus{
+    border: none;
+    outline: none;
+  }
+
+  /* Adjusting Flickity plugin default arrow controls and pager */
+  .flickity-prev-next-button{
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color .3s linear, border-color .3s linear;
+
+    @include break-max(tablet-m){
+      top: 20px;
+      @include size(33px, 33px);
+    }
+
+    @include break-min(tablet-m){
+      top: 50%;
+      transform: translate(0, calc(-50% + 6px));
+      @include size(43px, 43px);
+    }
+
+    @include hover{
+      background-color: $accent-color;
+      border-color: $accent-color;
+      transition: background-color .3s linear, border-color .3s linear;
+
+      .arrow{
+        fill: #fff;
+        transition: fill .3s linear;
+      }
+    }
+
+    &.previous{
+      @include break-max(laptop-m){ left: 3%; }
+      @include break-min(laptop-m){ left: 6.88%; }
+    }
+
+    &.next{
+      @include break-max(laptop-m){ right: 3%; }
+      @include break-min(laptop-m){ right: 6.88%; }
+    }
+
+    & .arrow{
+      fill: #fff;
+      transition: fill .3s linear;
+
+      @include break-max(tablet-m){ @include size(17px, 17px); }
+      @include break-min(laptop-m){ @include size(25px, 25px); }
+    }
+  }
+
+  .flickity-page-dots{
+    position: absolute;
+    @include flex(row, center);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 1;
+    padding: 0;
+
+    @include break-max(tablet-m){ bottom: 15px; }
+    @include break-min(tablet-m){ bottom: 35px; }
+    @include break-min(laptop-m){ bottom: 60px; }
+
+    & .dot{
+      display: block;
+      @include size(6px, 6px);
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 0 4px $accent-color;
+      opacity: 1;
+      cursor: pointer;
+      transition: box-shadow .3s linear;
+
+      &:not(:last-child){
+        margin-right: 25px;
+      }
+
+      &:hover{
+        box-shadow: 0 0 0 4px #fff;
+        transition: box-shadow .2s linear;
+      }
+    }
+
+    & .dot.is-selected{
+      box-shadow: 0 0 0 4px #fff;
+    }
+  }
+}
+
+.home-slide{
+  position: relative;
+  width: 100%;
+  @include flex(row, center);
+
+  @include break-min(mobile-m){ text-align: center; }
+  @include break-max(tablet-m){ min-height: 350px; }
+  @include break-min(tablet-m){ min-height: 500px; }
+  @include break-min(laptop-m){ min-height: 650px; }
+
+  &__title{
+    @extend %main-title;
+    margin: -10px 0 30px 0;
+
+    @include break-max(tablet-m){ padding: 2px 20px 0 15px; }
+    @include break-min(tablet-m){ padding: 2px 45px 0 30px; }
+    @include break-min(laptop-m){ padding: 2px 52px 0 45px; }
+  }
+
+  &__subtitle{
+    @extend %main-subtitle;
+  }
+
+  &__img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    @include size(100%, 100%);
+    object-fit: cover;
+    z-index: -1;
+    margin: auto;
+  }
+}
+
+.content-wrapper.home-page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $base-color;
+  padding: 33px 5% 0 5%;
+
+  @include break-min(laptop-l){ padding: 33px 230px 0 230px; }
+
+  .portfolio-load-btn{
+    margin-bottom: 70px;
+  }
+}
