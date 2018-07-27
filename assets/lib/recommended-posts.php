@@ -5,7 +5,7 @@ $tags = wp_get_post_tags($post->ID);
 if ($tags):
     $tag_ids = array();
     foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-    $number_of_posts = 6; // number of posts to display
+    $number_of_posts = 3; // number of posts to display
     $query = "
     SELECT ".$wpdb->posts.".*, COUNT(".$wpdb->posts.".ID) as q
     FROM ".$wpdb->posts." INNER JOIN ".$wpdb->term_relationships."
@@ -20,16 +20,16 @@ if ($tags):
     $related_posts = $wpdb->get_results($query, OBJECT);
     if($related_posts): ?>
         <div class="post-recommended js-post-recommended">
-            <h3 class="post-recommended__title">Recommended posts</h3>
-            <?php foreach($related_posts as $post): ?>
-                <?php setup_postdata($post); ?>
-                <div class="post-recommended__item">
-                    <a class="post-recommended__name" href="<?php the_permalink()?>">
-                        <?php the_post_thumbnail(); ?><br>
-                        <?php the_title(); ?>
+            <h3 class="post-recommended__title">Related works</h3>
+            <p class="post-recommended__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <div class="post-recommended__items">
+                <?php foreach($related_posts as $post): ?>
+                    <?php setup_postdata($post); ?>
+                    <a class="post-recommended__item" href="<?php the_permalink()?>">
+                        <?php the_post_thumbnail(); ?>
                     </a>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     <?php endif;
 endif;

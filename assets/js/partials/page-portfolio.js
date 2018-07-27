@@ -1,11 +1,10 @@
-//init
 var $portfolioGrid = $('.js-portfolio-post-wrapper').isotope({
     //options
     itemSelector: '.post',
     layoutMode: 'masonry',
     masonry: {
         columnWidth: '.post',
-        gutter: 20,
+        gutter: 30,
         isFitWidth: true,
         isResizable: true
     }

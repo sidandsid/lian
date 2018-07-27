@@ -16,6 +16,8 @@
     @include break-min(laptop-l){ padding: 0 230px; }
   }
 
+  &.portfolio-single{ min-height: 345px; }
+
   &__title{
     display: inline-block;
     max-width: 85%;
@@ -27,6 +29,8 @@
     padding: 3px 43px 0 35px;
     margin-bottom: 40px;
 
+    &.portfolio-single{ margin: -12px 0 44px 0; }
+
     @include break-max(tablet-m){ font-size: 36px; }
   }
 
@@ -36,6 +40,8 @@
     text-transform: uppercase;
     letter-spacing: 6.2px;
     word-spacing: 10px;
+
+    &.portfolio-single{ margin-top: - 5px; }
   }
 
   &__img{

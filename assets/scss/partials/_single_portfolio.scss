@@ -1,0 +1,450 @@
+.content-wrapper.portfolio-single{
+  background-color: $base-color;
+  padding-bottom: 35px;
+
+  .post-nav{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+
+    @include break-min(tablet-s){
+      padding: 0 5%;
+
+      &:before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 5%;
+        @include size(1px, 100%);
+        background-color: $border-color;
+      }
+    }
+
+    @include break-min(laptop-l){
+      padding: 0 230px;
+
+      &:before{
+        left: 230px;
+      }
+    }
+
+    &__item{
+      height: 60px;
+
+      a{
+        position: relative;
+        @include size(100%, 100%);
+        @include font(13px, 700, #071f08, $font-primary);
+        text-transform: uppercase;
+        text-decoration: none;
+        word-spacing: 1px;
+
+        @include break-max(tablet-s){ @include flex(row, center); }
+        @include break-min(tablet-s){ display: block; }
+      }
+
+      &.prev, &.next{
+        @include break-max(tablet-s){ width: calc(50% - 1px); }
+        @include break-min(tablet-s){ min-width: 163px; }
+
+        a{
+          @include border(solid, 0 1px 0 0, $border-color);
+          @include break-min(tablet-s){ padding: 23px 15px 30px 56px; }
+        }
+      }
+
+      &.prev{
+        @include hover{
+          .post-nav__item-icon.prev{
+            transform: translate(-46px, calc(-50% - 1px));
+            transition: transform .3s linear;
+          }
+        }
+      }
+
+      &.next{
+        @include hover{
+          .post-nav__item-icon.next{
+            transform: translate(31px, calc(-50% - 1px));
+            transition: transform .3s linear;
+          }
+        }
+      }
+
+      &.all{
+        margin-left: auto;
+
+        @include break-max(tablet-s){ width: 100%; }
+        @include break-min(tablet-s){ min-width: 195px; }
+
+        @include hover{
+          .post-nav__item-icon.all{
+            transform: translate(-40px, -50%) scale(1.1);
+            transition: transform .3s linear;
+          }
+        }
+
+        a{
+          @include break-max(tablet-s){border: 1px solid $border-color; }
+          @include break-min(tablet-s){
+            @include border(solid, 0 1px 0 1px, $border-color);
+            padding: 23px 15px 30px 75px;
+          }
+        }
+      }
+    }
+
+    &__item-icon{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      @include size(12px, 12px);
+      fill: #071f08;
+      margin: 0 auto;
+      transition: transform .3s linear;
+
+      &.prev{ transform: translate(-43px, calc(-50% - 1px)); }
+      &.next{ transform: translate(28px, calc(-50% - 1px)); }
+      &.all{
+        @include break-max(tablet-s){ transform: translate(-47px, -50%); }
+        @include break-min(tablet-s){ transform: translate(-40px, -50%); }
+      }
+    }
+  }
+
+  .post{
+    position: relative;
+    width: 100%;
+    background-color: $base-color;
+
+    @include break-max(laptop-l){ padding: 68px 5% 35px 5%; }
+    @include break-min(laptop-l){ padding: 68px 230px 35px 230px; }
+  }
+
+  .post-content{
+    margin-bottom: 55px;
+
+    @include break-min(laptop-s){ width: calc(100% - 590px); }
+    @include break-min(laptop-l){ width: 545px; }
+
+    p{
+      position: relative;
+      display: block;
+      @include font(14px, 400, $font-color-primary, $font-primary);
+      line-height: 200%;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    //adjusting default Flickity slider styles
+    .flickity-enabled{
+      border: none;
+      outline: none;
+      margin-bottom: 0;
+
+      @include break-min(laptop-s){
+        position: absolute;
+        top: 75px;
+        right: 5%;
+        width: 550px;
+      }
+
+      @include break-min(laptop-l){ right: 230px; }
+    }
+
+    .flickity-slider{
+
+      //slide
+      img{
+        display: block;
+        background-color: $accent-color;
+        object-fit: cover;
+        cursor: pointer;
+        margin-right: 5px;
+        transition: filter .3s;
+
+        @include hover{
+          filter: brightness(70%);
+          transition: filter .3s;
+        }
+
+        @include break-max(laptop-s){
+          @include size(25%, auto);
+        }
+
+        @include break-min(laptop-s){
+          @include size(130px, 115px);
+        }
+
+        &.is-selected{
+          filter: brightness(70%);
+        }
+      }
+    }
+  }
+
+  .post-slide{
+    position: relative;
+    @include size(100%, 350px);
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    img{
+      position: absolute !important; //overriding Flickity slider default positioning
+      top: 0 !important;
+      left: 0 !important;
+      @include size(100%, 100%);
+      object-fit: cover;
+    }
+  }
+
+  .post-title{
+    @include font(30px, 400, $accent-color, $font-primary);
+    text-transform: uppercase;
+    letter-spacing: 5.2px;
+    word-spacing: 5px;
+    margin-bottom: 9px;
+  }
+
+  .post-date{
+    position: relative;
+    display: block;
+    @include font(14px, 700, #555555, $font-primary);
+    margin: 55px 0 32px 0;
+
+    &:before{
+      position: absolute;
+      content: '';
+      top: -30px;
+      left: 0;
+      @include size(100%, 1px);
+      background-color: $border-color;
+    }
+  }
+
+  .post-footer{
+    @include border(solid, 1px 0 0 0, $border-color);
+    padding-top: 41px;
+    margin-bottom: 90px;
+
+    @include break-min(laptop-s){ width: calc(100% - 590px); }
+    @include break-min(laptop-l){ width: 545px; }
+  }
+
+  .post-meta{
+    &.topic{
+      @include font(16px, 700, #555555, $font-primary);
+      letter-spacing: 1px;
+    }
+
+    &.role{
+      position: relative;
+      display: block;
+      @include font(16px, 400, #999999, $font-primary);
+      margin-bottom: 55px;
+
+    }
+
+    &__title{
+      display: block;
+      @include font(16px, 600, #333333, $font-primary);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+  }
+
+  .post-tags{
+    position: relative;
+    display: block;
+    @include font(16px, 400, #999999, $font-primary);
+    margin-bottom: 52px;
+
+    &__title{
+      display: block;
+      @include font(16px, 700, #333333, $font-primary);
+      text-transform: uppercase;
+      margin-bottom: 19px;
+    }
+
+    a{
+      color: #999999;
+      text-decoration: none;
+      @include hover-color($accent-color);
+    }
+  }
+
+  .post-share{
+    display: flex;
+    flex-wrap: wrap;
+
+    &__icon{
+      @include flex(row, center);
+      @include font(13px, 700, #fff, $font-primary);
+      text-transform: uppercase;
+      background-color: #707070;
+      border-radius: 3px;
+      padding: 14px 15px 12px 13px;
+      margin: 0 15px 15px 0;
+
+      svg{
+        @include size(10px, 10px);
+        fill: #fff;
+        margin-right: 8px;
+      }
+    }
+
+    &__list{
+      position: relative;
+      @include flex(row, center);
+      background-color: $border-color;
+      border-radius: 3px;
+      padding: 15px 20px 0 15px;
+      margin-bottom: 15px;
+
+      &:before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: -10px;
+        transform: translate(0, -50%);
+        @include size(0, 0);
+        @include border(solid, 5px 10px 5px 0, transparent $border-color transparent transparent);
+      }
+    }
+
+    &__list-item{
+      cursor: pointer;
+      margin-bottom: 8px;
+
+      &:not(:last-child){
+        margin-right: 25px;
+      }
+
+      svg{
+        @include size(100%, 100%);
+        fill: #707070;
+        @include hover-fill($accent-color);
+      }
+
+      &.facebook{
+        svg{
+          @include size(14px, 14px);
+        }
+      }
+
+      &.google{
+        margin-right: 21px;
+
+        svg{
+          @include size(15px, 15px);
+        }
+      }
+
+      &.twitter{
+        svg{
+          @include size(13px, 13px);
+        }
+      }
+
+      &.linkedin{
+        svg{
+          @include size(15px, 15px);
+          transform: translate(0, -2px);
+        }
+      }
+
+      &.dribbble{
+        svg{
+          @include size(13px, 13px);
+          transform: translate(0, -1px);
+        }
+      }
+
+      &.pinterest{
+        svg{
+          @include size(14px, 14px);
+          transform: translate(0, -1px);
+        }
+      }
+
+      &.instagram{
+        svg{
+          @include size(14px, 14px);
+          transform: translate(0, -1px);
+        }
+      }
+    }
+  }
+
+  .post-recommended{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    &__title{
+      width: 90%;
+      @include font(30px, 400, $accent-color, $font-primary);
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    &__text{
+      @include font(14px, 400, $font-color-primary, $font-primary);
+      line-height: 220%;
+      text-align: center;
+      word-spacing: 1.5px;
+      margin: 0 auto 48px auto;
+
+      @include break-max(tablet-l){ width: 90%; }
+      @include break-min(tablet-l){ width: 45%; }
+      @include break-min(laptop-l){ width: 35%; }
+    }
+
+    &__items{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    &__item{
+      height: 250px;
+      overflow: hidden;
+      margin-bottom: 35px;
+
+      @include break-max(mobile-l){ width: 90%; }
+      @include break-min(mobile-l){ width: 350px; }
+
+      @include break-max(laptop-s){
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      @include break-min(laptop-s){
+        &:not(:last-child){
+          margin-right: 30px;
+        }
+      }
+
+      img{
+        @include size(100%, 100%);
+        object-fit: cover;
+        transition: filter .3s linear, transform .3s linear;
+
+        @include hover{
+          filter: brightness(70%);
+          transform: scale(1.1);
+          transition: filter .3s linear, transform .3s linear;
+        }
+      }
+    }
+  }
+}
