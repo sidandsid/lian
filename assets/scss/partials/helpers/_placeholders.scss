@@ -74,3 +74,14 @@
     margin: 0 auto;
   }
 }
+
+%form-btn{
+  @include font(14px, 700, #fff, $font-primary);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 3px;
+  background-color: $accent-color;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

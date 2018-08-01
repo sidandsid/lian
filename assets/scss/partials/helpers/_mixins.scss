@@ -50,6 +50,48 @@
   }
 }
 
+@mixin form-input($color, $color){
+  height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color;
+  font-family: $font-primary;
+  font-style: italic;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+
+  &::placeholder{
+    color: $color;
+  }
+
+  &:focus{
+    border-color: darken($border-color, 20%);
+    outline: none;
+  }
+}
+
+@mixin form-textarea($color){
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color;
+  font-family: $font-primary;
+  font-style: italic;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  padding: 17px 17px 17px 20px;
+  resize: none;
+
+  &::placeholder{
+    color: $color;
+  }
+
+  &:focus{
+    border-color: darken($border-color, 20%);
+    outline: none;
+  }
+}
+
 /* b r e a k p o i n t s   m i n */
 @mixin break-min($point){
   @media screen and (min-width: $point){
