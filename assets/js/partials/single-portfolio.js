@@ -21,8 +21,8 @@ var $linkAll = $('.post-nav__item.all a').append($showAll);
 //init Flickity slider - default options
 var $portfolioSingleSlider = $('.js-portfolio-single .post p:has(img)').flickity({
     cellSelector: 'img',
-    cellAlign: 'left',
     initialIndex: 0,
+    cellAlign: 'left',
     wrapAround: true,
     pageDots: false,
     prevNextButtons: false

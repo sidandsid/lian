@@ -10,7 +10,7 @@
             <button class="portfolio-filter__btn active" type="button" data-filter=".category-portfolio">All</button>
             <button class="portfolio-filter__btn" type="button" data-filter=".category-logo">Logo</button>
             <button class="portfolio-filter__btn" type="button" data-filter=".category-mobile-app">Mobile App</button>
-            <button class="portfolio-filter__btn" type="button" data-filter=".category-wordpress">WordPress</button>
+            <button class="portfolio-filter__btn" type="button" data-filter=".category-interior">Interior</button>
             <button class="portfolio-filter__btn" type="button" data-filter=".category-web-design">Web Design</button>
             <button class="portfolio-filter__btn" type="button" data-filter=".category-ui-ux">UI/UX</button>
             <button class="portfolio-filter__btn" type="button" data-filter=".category-branding">Branding</button>

@@ -10,6 +10,14 @@ var $portfolioGrid = $('.js-portfolio-post-wrapper').isotope({
     }
 });
 
+$portfolioGrid.imagesLoaded().progress( function() {
+    $portfolioGrid.isotope('layout');
+});
+
+$(window).resize(function(){
+    $portfolioGrid.isotope('layout');
+});
+
 //filter items on button click & adding active class to the clicked btn
 var $portfolioFilter = $('.js-portfolio-filter').on( 'click', 'button', function(){
 
@@ -23,9 +31,9 @@ var $portfolioFilter = $('.js-portfolio-filter').on( 'click', 'button', function
     $(btnClickedSibling).removeClass('active');
 });
 
-//load more btn
-var initShow = 3; //number of posts loaded initially
-var add = 3;  //number of posts added with Older posts btn
+//load more btn - src https://codepen.io/bebjakub/pen/jWoYEO
+var initShow = 10; //number of posts loaded initially
+var add = 5;  //number of posts added with Older posts btn
 var counter = add; //counter for load more button
 var iso = $portfolioGrid.data('isotope'); //get Isotope instance
 
@@ -46,7 +54,7 @@ function loadMore(toShow){
         $('.portfolio-load-btn').hide();
     } else {
         $('.portfolio-load-btn').show();
-    };
+    }
 }
 
 //append load more button
@@ -60,7 +68,7 @@ $('.portfolio-load-btn').click(function() {
         $('#filters').data('clicked', false);
     } else {
         add = add;
-    };
+    }
 
     add = add + initShow;
 

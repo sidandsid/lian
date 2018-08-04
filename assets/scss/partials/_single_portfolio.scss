@@ -126,7 +126,8 @@
   .post-content{
     margin-bottom: 55px;
 
-    @include break-min(laptop-s){ width: calc(100% - 590px); }
+    @include break-min(920px){ width: calc(100% - 470px); }
+    @include break-min(1150px){ width: calc(100% - 590px); }
     @include break-min(laptop-l){ width: 545px; }
 
     p{
@@ -144,13 +145,14 @@
       outline: none;
       margin-bottom: 0;
 
-      @include break-min(laptop-s){
+      @include break-min(920px){
         position: absolute;
         top: 75px;
         right: 5%;
-        width: 550px;
+        width: 420px;
       }
 
+      @include break-min(1150px){ width: 550px; }
       @include break-min(laptop-l){ right: 230px; }
     }
 
@@ -162,7 +164,7 @@
         background-color: $accent-color;
         object-fit: cover;
         cursor: pointer;
-        margin-right: 5px;
+        margin-right: 10px;
         transition: filter .3s;
 
         @include hover{
@@ -171,7 +173,7 @@
         }
 
         @include break-max(laptop-s){
-          @include size(25%, auto);
+          @include size(25%, 115px);
         }
 
         @include break-min(laptop-s){
@@ -187,9 +189,13 @@
 
   .post-slide{
     position: relative;
-    @include size(100%, 350px);
+    width: 100%;
     overflow: hidden;
     margin-bottom: 10px;
+
+    @include break-max(tablet-s){ height: 350px; }
+    @include break-min(tablet-s){ height: 450px; }
+    @include break-min(920px){ height: 350px; }
 
     img{
       position: absolute !important; //overriding Flickity slider default positioning
@@ -229,7 +235,8 @@
     padding-top: 41px;
     margin-bottom: 90px;
 
-    @include break-min(laptop-s){ width: calc(100% - 590px); }
+    @include break-min(920px){ width: calc(100% - 510px); }
+    @include break-min(1150px){ width: calc(100% - 590px); }
     @include break-min(laptop-l){ width: 545px; }
   }
 

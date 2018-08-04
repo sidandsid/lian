@@ -19,6 +19,7 @@
   .post{
     position: relative;
     background-color: $accent-color;
+    overflow: hidden;
     margin-bottom: 35px;
 
     @include break-max(mobile-m){ width: 310px; }
