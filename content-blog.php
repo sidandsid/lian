@@ -20,7 +20,9 @@
             by
             <?php the_author_posts_link(); ?>
         </span>
-        <?php the_content(); ?>
+        <a class="post-permalink" href="<?php echo get_permalink($post->ID);?>">
+            <?php the_content(); ?>
+        </a>
     </div>
 
     <div class="post-footer">

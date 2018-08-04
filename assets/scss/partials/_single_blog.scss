@@ -10,10 +10,13 @@
   @include break-max(laptop-l){ padding: 35px 5%; }
   @include break-min(laptop-l){ padding: 35px 325px; }
 
+  //General styles
   .post{
+    width: 100%;
     margin-bottom: 40px;
+
     @include break-max(laptop-l){ padding: 0 5%; }
- }
+  }
 
   .post-content{
 
@@ -77,10 +80,27 @@
     }
 
     p a{
+      text-transform: lowercase;
       overflow-wrap: break-word;
       word-wrap: break-word;
 
       @include hover-color($accent-color);
+    }
+
+    iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+
+    .post-iframe{
+      position: relative;
+      width: 100%;
+      padding: 0 0 56.25% 0;
     }
 
     .post-title{
@@ -120,6 +140,48 @@
 
   .post-featured-image{
     margin-bottom: 38px;
+  }
+
+  //Format-related styles
+  .format-status, .format-quote{
+    .post-details{
+      margin-bottom: 45px;
+    }
+  }
+
+  .format-status, .format-quote, .format-video, .format-audio{
+    .post-featured-image{
+      display: none;
+    }
+  }
+
+  .format-image{
+    .post-featured-image{
+      overflow: hidden;
+
+      img{
+        @include size(100%, 100%);
+        object-fit: cover;
+      }
+    }
+  }
+
+  .format-gallery{
+    p{
+      position: relative;
+      @include size(100%, auto);
+      overflow: hidden;
+      border: none;
+      outline: none;
+    }
+
+    img{
+      display: block;
+      @include size(100%, auto);
+      object-fit: cover;
+      vertical-align: bottom;
+      margin-right: 0;
+    }
   }
 }
 

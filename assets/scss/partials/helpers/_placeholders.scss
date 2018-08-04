@@ -1,5 +1,5 @@
 %post-no-details{
-  .post-featured-image, .post-meta, .post-title, .post-author, .post-footer{
+  .post-featured-image, .post-meta, .post-title, .post-author, .post-details, .post-footer{
     display: none;
   }
 }
@@ -84,4 +84,21 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+%load-btn{
+  @include size(125px, 30px);
+  @include font(13px, 700, #fff, $font-primary);
+  text-transform: uppercase;
+  background-color: #959595;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s;
+
+  @include hover{
+    letter-spacing: .8px;
+    transition: .3s;
+  }
 }
