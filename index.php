@@ -1,12 +1,10 @@
 <?php get_header(); ?>
-    <div class="content-wrapper home-page">
-        <div class="post-wrapper home-page">
+    <div class="content-wrapper page">
+        <div class="post-wrapper page">
             <?php
-            $category_query = new WP_Query( array( 'category_name' => 'portfolio' ) );
-
-            if ( $category_query->have_posts() ) : while ( $category_query->have_posts() ) : $category_query->the_post();
-                get_template_part( 'content-portfolio', get_post_format() );
-            endwhile; endif;
+                if ( have_posts() ) : while ( have_posts() ) : the_post();
+                    get_template_part( '/assets/lib/content-search', get_post_format() );
+                endwhile; endif;
             ?>
         </div>
         <?php get_sidebar(); ?>

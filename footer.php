@@ -8,7 +8,7 @@
     <!-- Footer social-media -->
     <div class="footer-sm">
         <?php
-        wp_nav_menu( array( 'theme_location' => 'footer-sm', 'container' => 'nav', 'container_class' => 'footer-sm__nav' ) );
+            wp_nav_menu( array( 'theme_location' => 'footer-sm', 'container' => 'nav', 'container_class' => 'footer-sm__nav' ) );
         ?>
     </div>
 

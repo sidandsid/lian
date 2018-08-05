@@ -18,9 +18,9 @@
         </ul>
         <div class="post-wrapper portfolio-single js-portfolio-single">
             <?php
-            if ( have_posts() ) : while ( have_posts() ) : the_post();
-                get_template_part( 'content-single-portfolio', get_post_format() );
-            endwhile; endif;
+                if ( have_posts() ) : while ( have_posts() ) : the_post();
+                    get_template_part( '/assets/lib/content-single-portfolio', get_post_format() );
+                endwhile; endif;
             ?>
         </div>
         <?php get_template_part( '/assets/lib/recommended-posts' );?>

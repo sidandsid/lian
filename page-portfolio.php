@@ -17,11 +17,11 @@
         </nav>
         <div class="post-wrapper portfolio-page js-portfolio-post-wrapper">
             <?php
-            $category_query = new WP_Query( array( 'category_name' => 'portfolio' ) );
+                $category_query = new WP_Query( array( 'category_name' => 'portfolio' ) );
 
-            if ( $category_query->have_posts() ) : while ( $category_query->have_posts() ) : $category_query->the_post();
-                get_template_part( 'content-portfolio', get_post_format() );
-            endwhile; endif;
+                if ( $category_query->have_posts() ) : while ( $category_query->have_posts() ) : $category_query->the_post();
+                    get_template_part( '/assets/lib/content-portfolio', get_post_format() );
+                endwhile; endif;
             ?>
         </div>
     </div>

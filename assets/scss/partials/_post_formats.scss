@@ -1,0 +1,325 @@
+//General styles
+.post{
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 35px;
+
+  @include break-max(laptop-s){ width: 100%; }
+  @include break-min(laptop-s){ width: $post-width; }
+}
+
+.post-featured-image{
+  @include size(100%, auto);
+  overflow: hidden;
+  transition: .3s opacity;
+
+  img{
+    @include size(100%, auto);
+    vertical-align: bottom;
+    object-fit: cover;
+  }
+}
+
+.post-permalink{
+  color: $font-color-primary;
+  text-decoration: none;
+}
+
+.post-content{
+  @include font(14px, 400, $font-color-primary, $font-primary);
+  line-height: 170%;
+  padding: 20px 35px 40px 45px;
+}
+
+.post-meta{
+  position: relative;
+  display: inline-block;
+  @include font(14px, 500, #fff, $font-primary);
+  text-transform: uppercase;
+  z-index: 1;
+  padding: 0 5%;
+  margin-bottom: 25px;
+
+  &:after{
+    position: absolute;
+    content: '';
+    @include size(100%, 120%);
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translate(0, -50%);
+    background-color: #000;
+    border-radius: 3px;
+    z-index: -1;
+    margin: 0 auto;
+  }
+}
+
+.post-title{
+  display: block;
+  @include font(20px, 600, $font-color-accent, $font-primary);
+  text-decoration: none;
+  line-height: 140%;
+  margin-bottom: 9px;
+}
+
+.post-author{
+  display: block;
+  @include font(13px, 400, #cccccc, $font-primary);
+  margin-bottom: 25px;
+
+  svg{
+    @include size(15px, 15px);
+    fill: $post-icon-color;
+    transform: translate(-2px, 2px);
+  }
+
+  a{
+    color: #cccccc;
+    text-decoration: none;
+
+    @include hover-color($accent-color);
+  }
+}
+
+.more-link{
+  @include font(14px, 400, $font-color-primary, $font-primary);
+  text-decoration: none;
+  line-height: 170%;
+}
+
+.post-footer{
+  position: relative;
+  display: flex;
+  padding: 20px 36px 50px 43px;
+}
+
+.post-date{
+  @include font(13px, 400, #9a9a9a, $font-primary);
+
+  svg{
+    @include size(13px, 13px);
+    fill: $post-icon-color;
+    margin-right: 5px;
+  }
+}
+
+.post-share{
+  display: block;
+  transform: translate(40px, 0);
+  margin-left: auto;
+
+  svg{
+    @include size(14px, 14px);
+    fill: $post-icon-color;
+
+    @include hover-fill($accent-color);
+  }
+}
+
+.post-like{
+  display: block;
+  margin-left: auto;
+
+  svg{
+    @include size(14px, 14px);
+    fill: $post-icon-color;
+
+    @include hover-fill($accent-color);
+  }
+}
+
+//Format-related styles
+//Status format
+.format-status{
+
+  .post-content{
+    padding-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .post-featured-image{
+    display: none;
+  }
+
+  .post-footer{
+    padding-bottom: 40px;
+  }
+}
+
+//Video & Audio format
+.format-video, .format-audio{
+  @extend %post-no-details;
+
+  .post-content{
+    position: relative;
+    @include size(100%, 0);
+    padding: 0 0 56.25% 0;
+
+    .more-link{
+      display: none;
+    }
+
+    iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+  }
+}
+
+//Image format
+.format-image{
+  position: relative;
+
+  img{
+    @include size(100%, 100%);
+    object-fit: cover;
+  }
+
+  @include hover{
+    .post-content, .post-footer{
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  .post-featured-image{
+    position: absolute;
+    @include size(100%, 100%);
+    top: 0;
+    left: 0;
+  }
+
+  .post-permalink{
+    color: #e5e5e5;
+  }
+
+  .post-content{
+    position: relative;
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 0;
+    transition: .3s linear;
+    padding: 40px 35px 50px 45px;
+  }
+
+  .post-title{
+    color: #fff;
+  }
+
+  .post-footer{
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 0;
+    padding-bottom: 40px;
+    transition: .3s linear;
+  }
+}
+
+//Gallery format
+.format-gallery{
+  @extend %post-no-details;
+
+  .post-content{
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .more-link{
+    display: none;
+  }
+
+  p{
+    height: auto;
+    overflow: hidden;
+
+    img{
+      @include size(100%, auto);
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+}
+
+//Link format
+.format-link{
+  @extend %post-no-details;
+
+  .post-content{
+    padding: 30px 15px 30px 25px;
+  }
+
+  p a{
+    position: relative;
+    display: block;
+    @include font(18px, 700, $font-color-primary, $font-quote);
+    font-style: italic;
+    text-transform: lowercase;
+    text-decoration: none;
+    letter-spacing: .5px;
+    line-height: 150%;
+    padding-left: 15px;
+    @include border(solid, 0 0 0 2px, darken($border-color, 7%));
+    word-break: break-all;
+
+    @include hover-color($accent-color);
+  }
+}
+
+//Quote format
+.format-quote{
+  @extend %post-no-details;
+
+  .post-content{
+    padding: 25px 10px 20px 25px;
+  }
+
+  blockquote{
+    margin: 0 0 20px 0;
+  }
+
+  blockquote p{
+    position: relative;
+    display: block;
+    @include font(20px, 700, $font-color-primary, $font-quote);
+    font-style: italic;
+    letter-spacing: .5px;
+    padding-left: 15px;
+    @include border(solid, 0 0 0 2px, darken($border-color, 7%));
+  }
+
+  p{
+    @include font(18px, 500, $font-color-primary, $font-quote);
+  }
+}
+
+//Adjusting Flickity slider default controls
+.flickity-viewport{
+  position: relative;
+}
+
+.flickity-prev-next-button{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  @include size(40px, 40px);
+  background-color: transparent;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .3s linear, background-color .3s linear;
+
+  @include hover{
+    border-color: $accent-color;
+    background-color: $accent-color;
+    transition: border-color .3s linear, background-color .3s linear;
+  }
+
+  &.previous{left: 3%; }
+  &.next{ right: 3%; }
+  & .arrow{ fill: $border-color; }
+}

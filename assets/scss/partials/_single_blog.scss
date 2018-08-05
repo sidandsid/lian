@@ -13,12 +13,14 @@
   //General styles
   .post{
     width: 100%;
+    background-color: $base-color;
     margin-bottom: 40px;
 
     @include break-max(laptop-l){ padding: 0 5%; }
   }
 
   .post-content{
+    background-color: $base-color;
 
     h1, h2, h3, h4, h5, h6{
       display: block;
@@ -157,12 +159,24 @@
 
   .format-image{
     .post-featured-image{
+      position: relative;
       overflow: hidden;
 
       img{
         @include size(100%, 100%);
         object-fit: cover;
       }
+    }
+
+    .post-content, .post-footer{
+      opacity: 1;
+    }
+  }
+
+  .format-video, .format-audio{
+    .post-content{
+      height: auto;
+      padding-bottom: 0;
     }
   }
 

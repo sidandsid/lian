@@ -17,14 +17,14 @@
             <?php endif;?>
         </div>
 
-        <!--    Header navigation    -->
+        <!-- Header navigation -->
         <div class="header-nav">
             <div class="header-menu">
                 <div class="header-menu__burger js-header-menu__burger">
                     <span class="header-menu__burger-line js-header-menu__burger-line"></span>
                 </div>
                 <?php
-                wp_nav_menu( array( 'theme_location' => 'header-navigation', 'container_class' => 'header-menu__items js-header-menu__items' ) );
+                    wp_nav_menu( array( 'theme_location' => 'header-navigation', 'container_class' => 'header-menu__items js-header-menu__items' ) );
                 ?>
             </div>
 

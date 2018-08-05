@@ -1,4 +1,4 @@
-<aside class="sidebar js-sidebar">
+<aside class="sidebar">
     <!--  Sidebar search  -->
     <div class="sidebar-search">
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar search") ) : ?>

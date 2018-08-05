@@ -7,10 +7,11 @@
     <div class="content-wrapper blog-page">
         <div class="post-wrapper blog-page js-blog-post-wrapper">
             <?php
-            $category_query = new WP_Query( array( 'category_name' => 'blog' ) );
-            if ( $category_query->have_posts() ) : while ( $category_query->have_posts() ) : $category_query->the_post();
-                get_template_part( 'content-blog', get_post_format() );
-            endwhile; endif;
+                $category_query = new WP_Query( array( 'category_name' => 'blog' ) );
+
+                if ( $category_query->have_posts() ) : while ( $category_query->have_posts() ) : $category_query->the_post();
+                    get_template_part( '/assets/lib/content-blog', get_post_format() );
+                endwhile; endif;
             ?>
         </div>
         <?php get_sidebar(); ?>

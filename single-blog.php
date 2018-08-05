@@ -7,9 +7,9 @@
     <div class="content-wrapper blog-single">
         <div class="post-wrapper blog-single">
             <?php
-            if ( have_posts() ) : while ( have_posts() ) : the_post();
-                get_template_part( 'content-single-blog', get_post_format() );
-            endwhile; endif;
+                if ( have_posts() ) : while ( have_posts() ) : the_post();
+                    get_template_part( '/assets/lib/content-single-blog', get_post_format() );
+                endwhile; endif;
             ?>
         </div>
         <?php comments_template( '/assets/lib/comment-form.php' ); ?>

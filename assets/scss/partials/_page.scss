@@ -1,32 +1,24 @@
-.content-wrapper.search-page{
-  @include flex(column, center);
+.content-wrapper.page{
+  display: flex;
+  justify-content: center;
   background-color: $base-color;
+
+  @include break-max(tablet-m){
+    flex-direction: column;
+    align-items: center;
+  }
 
   @include break-max(laptop-l){ padding: 75px 5%; }
   @include break-min(laptop-l){ padding: 75px 225px; }
 }
 
-.search-page__title{
-  @extend %main-title;
-  display: block;
-  max-width: 100%;
-  margin-bottom: 30px;
-}
-
-.search-page__text{
-  @extend %main-subtitle;
-  column-span: all;
-  margin-bottom: 50px;
-}
-
-.post-wrapper.search-page{
+.post-wrapper.page{
+  position: relative;
   width: 100%;
-  max-width: 1140px;
-  overflow: hidden;
-  column-count: 3;
+  max-width: 750px;
+  column-count: 2;
   column-width: $post-width;
   column-gap: 30px;
-  margin: 0 auto;
 
   .post{
     break-inside: avoid-column;

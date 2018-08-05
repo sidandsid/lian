@@ -45,7 +45,7 @@
       }
 
       &.prev, &.next{
-        @include break-max(tablet-s){ width: calc(50% - 1px); }
+        @include break-max(tablet-s){ width: 50%; }
         @include break-min(tablet-s){ min-width: 163px; }
 
         a{
@@ -86,7 +86,7 @@
         }
 
         a{
-          @include break-max(tablet-s){border: 1px solid $border-color; }
+          @include break-max(tablet-s){ border: 1px solid $border-color; }
           @include break-min(tablet-s){
             @include border(solid, 0 1px 0 1px, $border-color);
             padding: 23px 15px 30px 75px;
@@ -116,6 +116,7 @@
 
   .post{
     position: relative;
+    display: block;
     width: 100%;
     background-color: $base-color;
 
@@ -124,6 +125,7 @@
   }
 
   .post-content{
+    padding: 0;
     margin-bottom: 55px;
 
     @include break-min(920px){ width: calc(100% - 470px); }
@@ -157,10 +159,10 @@
     }
 
     .flickity-slider{
-
       //slide
       img{
         display: block;
+        height: 115px;
         background-color: $accent-color;
         object-fit: cover;
         cursor: pointer;
@@ -172,13 +174,10 @@
           transition: filter .3s;
         }
 
-        @include break-max(laptop-s){
-          @include size(25%, 115px);
-        }
-
-        @include break-min(laptop-s){
-          @include size(130px, 115px);
-        }
+        @include break-max(mobile-l){ width: 50%; }
+        @include break-min(mobile-l){ width: 33.33%; }
+        @include break-min(tablet-s){ width: 25%; }
+        @include break-min(laptop-m){ width: 130px; }
 
         &.is-selected{
           filter: brightness(70%);
@@ -231,8 +230,9 @@
   }
 
   .post-footer{
+    display: block;
     @include border(solid, 1px 0 0 0, $border-color);
-    padding-top: 41px;
+    padding: 41px 0 0 0;
     margin-bottom: 90px;
 
     @include break-min(920px){ width: calc(100% - 510px); }
@@ -241,14 +241,23 @@
   }
 
   .post-meta{
+    position: relative;
+    display: block;
+    text-transform: none;
+    z-index: 1;
+    padding: 0;
+    margin-bottom: 0;
+
+    &:after{
+      display: none;
+    }
+
     &.topic{
       @include font(16px, 700, #555555, $font-primary);
       letter-spacing: 1px;
     }
 
     &.role{
-      position: relative;
-      display: block;
       @include font(16px, 400, #999999, $font-primary);
       margin-bottom: 55px;
 
@@ -285,6 +294,7 @@
   .post-share{
     display: flex;
     flex-wrap: wrap;
+    transform: translate(0, 0);
 
     &__icon{
       @include flex(row, center);
@@ -304,7 +314,7 @@
 
     &__list{
       position: relative;
-      @include flex(row, center);
+      @include flex(row, flex-start);
       background-color: $border-color;
       border-radius: 3px;
       padding: 15px 20px 0 15px;

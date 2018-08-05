@@ -4,16 +4,16 @@
             <?php _e( 'Search results found for', 'locale' ); ?>: "<?php the_search_query(); ?>"
         </h1>
         <?php get_search_form(); ?>
-       <div class="post-wrapper search-page js-search-post-wrapper">
+       <div class="post-wrapper search-page">
            <?php
-           if ( have_posts() ) :  while ( have_posts() ) : the_post();
-                   get_template_part( 'content-search', get_post_format() );
-           endwhile;
+               if ( have_posts() ) :  while ( have_posts() ) : the_post();
+                       get_template_part( '/assets/lib/content-search', get_post_format() );
+               endwhile;
 
-           else : ?>
-               <p class="search-page__text"><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'); ?></p>
-               <?php
-           endif;
+               else : ?>
+                   <p class="search-page__text"><?php _e( 'Sorry, nothing matched your search terms. Please try again with some different keywords.'); ?></p>
+                   <?php
+               endif;
            ?>
        </div>
     </div>
