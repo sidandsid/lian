@@ -1,0 +1,142 @@
+.sidebar{
+  background-color: $base-color;
+
+  @include break-min(tablet-m){
+    max-width: $sidebar-width;
+    margin-left: 15px;
+  }
+}
+
+.sidebar-search{
+  margin-bottom: 27px;
+
+  &__form{
+    position: relative;
+  }
+
+  &__input{
+    @include size(100%, 60px);
+    @include font(16px, 400, #b7b7b7, $font-primary);
+    font-style: italic;
+    letter-spacing: 1px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    padding: 0 50px 0 25px;
+
+    &::placeholder{
+      color: #b7b7b7;
+    }
+
+    &:focus{
+      outline: none;
+      border: 1px solid $border-color;
+    }
+  }
+
+  &__btn{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    @include flex(row, center);
+    @include size(35px, 35px);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: #999999;
+    cursor: pointer;
+    transition: background-color .3s linear;
+
+    @include hover{
+      background-color: $accent-color;
+      transition: background-color .3s linear;
+    }
+  }
+
+  svg{
+    @include size(15px, 15px);
+    fill: #fff;
+  }
+}
+
+.sidebar-posts{
+  background-color: #fff;
+  margin-bottom: 25px;
+
+  h2{
+    @extend %sidebar-title;
+    margin-bottom: 25px;
+  }
+
+  &__item{
+    position: relative;
+    display: flex;
+    padding: 0 25px 25px 25px;
+  }
+
+  &__img{
+    margin-right: 17px;
+
+    img{
+      @include size(90px, 65px);
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+
+  &__info-title{
+    @include font(16px, 500, #3d3d3d, $font-primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    @include hover-color($accent-color);
+  }
+
+  &__info-date{
+    display: block;
+    @include font(13px, 300, #999999, $font-primary);
+    letter-spacing: 1px;
+    padding-top: 18px;
+    margin: 0;
+  }
+}
+
+.sidebar-tags{
+  background-color: #fff;
+  margin-bottom: 40px;
+
+  h2{
+    @extend %sidebar-title;
+    margin-bottom: 34px;
+  }
+
+  .tagcloud{
+    padding: 0 0 35px 20px;
+  }
+
+  a{
+    display: inline-block;
+    @include font(13px, 400, #9c9c9c, $font-primary);
+    font-size: 13px !important;
+    text-decoration: none;
+    text-transform: lowercase;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    padding: 8px 16px;
+    margin: 0 7px 9px 0;
+    transition: color .1s linear, background-color .1s linear;
+
+    @include hover{
+      color: #fff;
+      background-color: $accent-color;
+      transition: color .1s linear, background-color .1s linear;
+    }
+  }
+}
+
+.sidebar-instagram{
+  h2{
+    @extend %sidebar-title;
+  }
+}

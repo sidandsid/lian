@@ -1,11 +1,11 @@
 <aside class="sidebar js-sidebar">
     <!--  Sidebar search  -->
     <div class="sidebar-search">
-        <form class="sidebar-search__form" action="<?php echo home_url( '/' ) ?>" method="get">
-            <input class="sidebar-search__input" type="text" value="<?php echo get_search_query() ?>" placeholder="Search" name="search">
-            <button class="sidebar-search__btn" type="submit">
-                <?php get_template_part('assets/svg/inline', 'search.svg'); ?>
-            </button>
+        <form class="sidebar-search__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+           <input class="sidebar-search__input" type="search" placeholder="Search" value="<?php echo get_search_query(); ?>" name="s" />
+           <button class="sidebar-search__btn" type="submit">
+               <?php get_template_part('assets/svg/inline', 'search.svg'); ?>
+           </button>
         </form>
     </div>
 
