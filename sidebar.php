@@ -1,12 +1,8 @@
 <aside class="sidebar js-sidebar">
     <!--  Sidebar search  -->
     <div class="sidebar-search">
-        <form class="sidebar-search__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-           <input class="sidebar-search__input" type="search" placeholder="Search" value="<?php echo get_search_query(); ?>" name="s" />
-           <button class="sidebar-search__btn" type="submit">
-               <?php get_template_part('assets/svg/inline', 'search.svg'); ?>
-           </button>
-        </form>
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar search") ) : ?>
+        <?php endif;?>
     </div>
 
     <!--  Sidebar recent posts  -->

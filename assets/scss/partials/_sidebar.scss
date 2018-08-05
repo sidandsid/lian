@@ -8,55 +8,8 @@
 }
 
 .sidebar-search{
-  margin-bottom: 27px;
-
-  &__form{
-    position: relative;
-  }
-
-  &__input{
-    @include size(100%, 60px);
-    @include font(16px, 400, #b7b7b7, $font-primary);
-    font-style: italic;
-    letter-spacing: 1px;
-    background-color: #fff;
-    border: none;
-    outline: none;
-    padding: 0 50px 0 25px;
-
-    &::placeholder{
-      color: #b7b7b7;
-    }
-
-    &:focus{
-      outline: none;
-      border: 1px solid $border-color;
-    }
-  }
-
-  &__btn{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%);
-    @include flex(row, center);
-    @include size(35px, 35px);
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    background-color: #999999;
-    cursor: pointer;
-    transition: background-color .3s linear;
-
-    @include hover{
-      background-color: $accent-color;
-      transition: background-color .3s linear;
-    }
-  }
-
-  svg{
-    @include size(15px, 15px);
-    fill: #fff;
+  form{
+    margin-bottom: 27px;
   }
 }
 

@@ -69,6 +69,13 @@ if ( function_exists('register_sidebar') )
 //Sidebar recent posts widget
 if ( function_exists('register_sidebar') )
     register_sidebar(array(
+            'name' => 'Sidebar search',
+        )
+    );
+
+//Sidebar recent posts widget
+if ( function_exists('register_sidebar') )
+    register_sidebar(array(
             'name' => 'Sidebar recent posts',
         )
     );
