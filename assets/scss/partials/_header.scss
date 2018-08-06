@@ -5,6 +5,7 @@
   width: 100%;
   background-color: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0 ,0, 0.75);
+  z-index: 1;
 
   @include break-max(tablet-l){ min-height: 50px; }
   @include break-min(tablet-l){ min-height: 90px; }
@@ -58,7 +59,6 @@
     }
 
     &.clicked{
-
       &:before{
         transform: translate(0, -5px);
         transition: .4s ;
@@ -72,8 +72,10 @@
   }
 
   &__items{
+    z-index: 1000;
     @include break-max(tablet-l){
       position: absolute;
+      display: block;
       visibility: hidden;
       top: 80%;
       right: 0;
@@ -91,6 +93,11 @@
       opacity: 1;
       @include border(solid, 1px 0 0 0, $border-color);
       transition: .4s;
+
+      //background-color: palegreen;
+      //display: block;
+      //position: absolute;
+      //z-index: 100;
     }
   }
 
@@ -98,6 +105,7 @@
     @include break-min(mobile-m){
       display: flex;
       flex-wrap: wrap;
+      z-index: 100;
     }
 
     @include break-max(tablet-l){ padding: 20px 5%; }

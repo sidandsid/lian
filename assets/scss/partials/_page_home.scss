@@ -16,7 +16,6 @@
     border-radius: 50%;
     outline: none;
     cursor: pointer;
-    z-index: 1;
     transition: background-color .3s linear, border-color .3s linear;
 
     @include break-max(tablet-m){
