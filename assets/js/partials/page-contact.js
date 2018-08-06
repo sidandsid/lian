@@ -43,7 +43,7 @@ function initMap(){
         iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': '0px 0px 0px 1px #e1e1e1', 'z-index' : '1'});
 
         //Changing close button position
-        iwCloseBtn.css({right: '-25px', top: '25px'});
+        iwCloseBtn.css({right: '-15px', top: '25px'});
     });
 
     //Adding custom map style

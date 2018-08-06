@@ -11,7 +11,6 @@ jQuery(document).ready(function(){
     //= partials/single-blog.js
     //= partials/single-portfolio.js
     //= partials/page-portfolio.js
-
 });
 
 //= partials/page-contact.js

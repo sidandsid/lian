@@ -11,16 +11,16 @@
             <p class="contact-info__subtitle">People behind the success of our company</p>
             <p class="contact-info__item hours"><span class="contact-info__item-title">Office Hours: </span>Mon-Friday 8am - 10pm</p>
             <p class="contact-info__item address"><span class="contact-info__item-title">Address: </span>Igbalangao, Bugasong, Antique</p>
-            <p class="contact-info__item tell"><span class="contact-info__item-title">Tell:  </span>123-456-7890</p>
-            <p class="contact-info__item fax"><span class="contact-info__item-title">Fax:  </span>123-456-7890</p>
+            <p class="contact-info__item tell"><span class="contact-info__item-title">Tell: </span><a class="contact-info__item-link" href="tel:123-456-7890">123-456-7890</a></p>
+            <p class="contact-info__item fax"><span class="contact-info__item-title">Fax: </span> <a class="contact-info__item-link" href="tel:123-456-7890">123-456-7890</a></p>
         </div>
 
-        <div class="contact-form">
+        <form class="contact-form">
             <input class="contact-form__input name" type="text" title="Name" placeholder="Name" required="">
             <input class="contact-form__input email" type="email" title="Email" placeholder="Email" required="">
             <textarea class="contact-form__textarea" title="message" placeholder="Message" required=""></textarea>
             <button class="contact-form__btn" type="submit">Send message</button>
-        </div>
+        </form>
 
        <div class="contact-map" id="js-contact-map"></div>
 

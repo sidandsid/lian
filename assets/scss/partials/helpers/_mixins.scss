@@ -50,7 +50,7 @@
   }
 }
 
-@mixin form-input($color, $color){
+@mixin form-input($color){
   height: 40px;
   font-size: 14px;
   font-weight: 400;
@@ -79,7 +79,6 @@
   font-style: italic;
   border: 1px solid $border-color;
   border-radius: 3px;
-  padding: 17px 17px 17px 20px;
   resize: none;
 
   &::placeholder{
