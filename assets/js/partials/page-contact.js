@@ -1,5 +1,5 @@
 function initMap(){
-    var center = {lat: 40.676488061076086, lng: -73.82502968051756};
+    var center = {lat: 40.67327054, lng: -73.82531223};
     var map = new google.maps.Map(document.getElementById('js-contact-map'), {
         center: center,
         scrollwheel: false,
@@ -24,7 +24,7 @@ function initMap(){
         content: infoWindowContent
     });
 
-    infoWindow.setPosition({lat: 40.67340589770921, lng: -73.826188394812});
+    infoWindow.setPosition({lat: 40.67133387, lng: -73.82529077});
     infoWindow.open(map);
 
     google.maps.event.addListener(infoWindow, 'domready', function(){

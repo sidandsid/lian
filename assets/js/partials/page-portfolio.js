@@ -3,14 +3,13 @@ var $portfolioGrid = $('.js-portfolio-post-wrapper').isotope({
     itemSelector: '.post',
     layoutMode: 'masonry',
     masonry: {
-        columnWidth: '.post',
         gutter: 30,
         isFitWidth: true,
         isResizable: true
     }
 });
 
-$portfolioGrid.imagesLoaded().progress( function() {
+$portfolioGrid.imagesLoaded().progress( function(){
     $portfolioGrid.isotope('layout');
 });
 

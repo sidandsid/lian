@@ -4,8 +4,8 @@
   background-color: #fff;
   margin-bottom: 35px;
 
-  @include break-max(laptop-s){ width: 100%; }
-  @include break-min(laptop-s){ width: $post-width; }
+  @include break-max(laptop-m){ width: 100%; }
+  @include break-min(laptop-m){ width: $post-width; }
 }
 
 .post-featured-image{
@@ -91,6 +91,7 @@
 .post-footer{
   position: relative;
   display: flex;
+  justify-content: space-between;
   padding: 20px 36px 50px 43px;
 }
 
@@ -105,9 +106,9 @@
 }
 
 .post-share{
+  position: absolute;
   display: block;
-  transform: translate(40px, 0);
-  margin-left: auto;
+  right: 75px;
 
   svg{
     @include size(14px, 14px);
@@ -119,7 +120,6 @@
 
 .post-like{
   display: block;
-  margin-left: auto;
 
   svg{
     @include size(14px, 14px);
@@ -202,9 +202,10 @@
   .post-content{
     position: relative;
     background-color: rgba(0, 0, 0, .8);
-    opacity: 0;
-    transition: .3s linear;
     padding: 40px 35px 50px 45px;
+    transition: .3s linear;
+
+    @include break-min(tablet-l){ opacity: 0; }
   }
 
   .post-title{
@@ -213,9 +214,10 @@
 
   .post-footer{
     background-color: rgba(0, 0, 0, .8);
-    opacity: 0;
     padding-bottom: 40px;
     transition: .3s linear;
+
+    @include break-min(tablet-l){ opacity: 0; }
   }
 }
 
@@ -233,11 +235,8 @@
   }
 
   p{
-    height: auto;
-    overflow: hidden;
-
     img{
-      @include size(100%, auto);
+      @include size(100%, 370px);
       object-fit: cover;
       vertical-align: bottom;
     }
@@ -299,6 +298,7 @@
 //Adjusting Flickity slider default controls
 .flickity-viewport{
   position: relative;
+  height: 100%;
 }
 
 .flickity-prev-next-button{

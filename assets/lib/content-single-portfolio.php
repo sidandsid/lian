@@ -12,7 +12,7 @@
         <?php the_content(); ?>
     </div>
     <div class="post-footer">
-         <div class="post-meta role">
+        <div class="post-meta role">
              <span class="post-meta__title">Role on project:</span>
              <?php
                  if ( get_post_meta( $post->ID, 'Role', true ) ) {

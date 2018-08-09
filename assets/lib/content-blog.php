@@ -31,11 +31,11 @@
             on
             <?php the_time( get_option( 'date_format' ) ); ?>
         </span>
-        <span class="post-share">
+        <a class="post-share" href="#">
             <?php get_template_part('assets/svg/inline', 'share.svg'); ?>
-        </span>
-        <span class="post-like">
+        </a>
+        <a class="post-like" href="#">
             <?php get_template_part('assets/svg/inline', 'heart.svg'); ?>
-        </span>
+        </a>
     </div>
 </div>

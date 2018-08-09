@@ -3,8 +3,10 @@
   flex-wrap: wrap;
   justify-content: center;
   background-color: $base-color;
-  padding: 75px 5%;
 
+  @include break-max(1350px){ padding: 75px 5%; }
+  @include break-min(1350px){ padding: 75px 10%; }
+  @include break-min(1500px){ padding: 75px 190px; }
   @include break-min(laptop-l){ padding: 75px 225px; }
 }
 
@@ -22,6 +24,7 @@
 
   @include break-min(tablet-l){
     width: 47.5%;
+    transform: translate(-5px, 0);
   }
 
   img{
@@ -199,11 +202,19 @@
     }
 
     @include break-min(laptop-m){
-      width: 358px;
+      width: 330px;
       margin-bottom: 25px;
 
       &:not(:last-child){
-        margin-right: 30px;
+        margin-right: 20px;
+      }
+    }
+
+    @include break-min(1500px){
+      width: 358px;
+
+      &:not(:last-child){
+        margin-right: 20px;
       }
     }
   }

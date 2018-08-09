@@ -2,7 +2,7 @@
   background-color: $base-color;
 
   @include break-min(tablet-m){
-    max-width: $sidebar-width;
+    width: $sidebar-width;
     margin-left: 15px;
   }
 }

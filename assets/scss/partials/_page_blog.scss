@@ -8,16 +8,26 @@
     align-items: center;
   }
 
-  @include break-max(laptop-l){ padding: 75px 5%; }
+  @include break-max(1350px){ padding: 75px 5%; }
+  @include break-min(1350px){ padding: 75px 10%; }
+  @include break-min(1500px){ padding: 75px 190px; }
   @include break-min(laptop-l){ padding: 75px 225px; }
 }
 
 .post-wrapper.blog-page{
-  position: relative;
-  width: 100%;
-  max-width: 750px;
+  @include break-max(tablet-m){
+    width: 100%;
+    margin-bottom: 160px;
+  }
 
-  @include break-max(tablet-m){ margin-bottom: 180px; }
-  @include break-min(tablet-m){ margin: 0 15px 100px 0; }
-  @include break-min(laptop-s){ margin-bottom: 180px; }
+  @include break-min(tablet-m){
+    width: calc(100% - 360px);
+    margin: 0 15px 80px 0;
+  }
+
+  @include break-min(laptop-m){
+    min-width: 750px;
+    max-width: 750px;
+    margin-bottom: 100px;
+  }
 }

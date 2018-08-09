@@ -5,8 +5,10 @@
   align-items: center;
   justify-content: center;
   background-color: $base-color;
-  padding: 70px 5%;
 
+  @include break-max(1350px){ padding: 70px 5%; }
+  @include break-min(1350px){ padding: 70px 10%; }
+  @include break-min(1500px){ padding: 70px 190px; }
   @include break-min(laptop-l){ padding: 70px 230px; }
 }
 
@@ -18,35 +20,43 @@
 
   .post{
     position: relative;
-    background-color: $accent-color;
+    height: auto;
     overflow: hidden;
     margin-bottom: 35px;
 
-    @include break-max(mobile-m){ width: 310px; }
+    @include break-max(mobile-m){ width: 290px; }
     @include break-min(mobile-m){ width: $post-width; }
+    @include break-min(1350px){ width: 340px; }
+    @include break-min(laptop-l){ width: $post-width; }
 
-    &:after{
+    &:before, &:after{
       position: absolute;
-      content: '+';
-      @include flex(row, center);
-      @include size(100%, 100%);
-      top: 0;
+      content: '';
+      top: 50%;
+      right: 0;
       left: 0;
-      color: #fff;
-      font-weight: 300;
-      font-size: 76px;
+      transform: translate(0, -50%);
+      @include size(40px, 2px);
+      background-color: #fff;
+      border-radius: 3px;
       opacity: 0;
       pointer-events: none;
+      z-index: 1;
+      margin: 0 auto;
       transition: .3s opacity;
     }
 
-    &:hover{
+    &:after{
+      transform: translate(0, -50%) rotate(90deg);
+    }
+
+    @include hover{
       .post-featured-image{
-        opacity: .6;
-        transition: .3s opacity;
+        filter: brightness(40%);
+        transition: .3s filter;
       }
 
-      &:after{
+      &:before, &:after{
         opacity: 1;
         transition: .3s opacity;
       }
@@ -58,14 +68,20 @@
   }
 
   .post-featured-image{
+    display: block;
     @include size(100%, auto);
     overflow: hidden;
-    transition: .3s opacity;
+    background-color: $border-color;
+    transition: .3s filter;
 
     img{
+      display: block;
       @include size(100%, auto);
+      max-width: 100%;
       vertical-align: bottom;
       object-fit: cover;
+
+      @include break-max(mobile-m){ width: 310px; }
     }
   }
 }
@@ -73,16 +89,17 @@
 .portfolio-filter{
   display: flex;
   width: 100%;
+  max-width: 1140px;
   @include border(solid, 1px 0 1px 0, $border-color);
   padding-top: 23px;
   margin-bottom: 32px;
 
-  @include break-max(419px){
+  @include break-max(mobile-m){
     flex-direction: column;
     align-items: flex-start;
   }
 
-  @include break-min(420px){
+  @include break-min(mobile-m){
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -108,7 +125,7 @@
     &:not(:last-child){
       margin-right: 33px;
 
-      @include break-min(420px){
+      @include break-min(mobile-m){
         &:after{
           position: absolute;
           content: '';

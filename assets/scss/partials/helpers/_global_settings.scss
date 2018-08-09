@@ -2,7 +2,7 @@
   box-sizing: border-box;
 
   &::selection{
-    background-color: #999999;
+    background-color: 	#e9e2e2;
   }
 }
 
@@ -17,6 +17,9 @@ body{
 }
 
 h1, h2, h3, h4, h5{
+  word-break: break-all;
+  word-wrap: break-word;
+  hyphens: auto;
   margin: 0;
   cursor: default;
 }
@@ -28,10 +31,7 @@ ul, li{
 }
 
 p, span{
+  hyphens: auto;
   margin: 0;
   cursor: default;
 }
-
-.content-wrapper{}
-
-.post-wrapper{}

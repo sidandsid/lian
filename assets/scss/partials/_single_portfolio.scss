@@ -21,11 +21,27 @@
       }
     }
 
-    @include break-min(laptop-l){
-      padding: 0 230px;
+    @include break-min(1350px){
+      padding: 0 10%;
 
       &:before{
-        left: 230px;
+        left: 10%;
+      }
+    }
+
+    @include break-min(1500px){
+      padding: 0 190px;
+
+      &:before{
+        left: 190px;
+      }
+    }
+
+    @include break-min(laptop-l){
+      padding: 0 227px;
+
+      &:before{
+        left: 227px;
       }
     }
 
@@ -120,8 +136,10 @@
     width: 100%;
     background-color: $base-color;
 
-    @include break-max(laptop-l){ padding: 68px 5% 35px 5%; }
-    @include break-min(laptop-l){ padding: 68px 230px 35px 230px; }
+    @include break-max(1350px){ padding: 68px 5% 35px 5%; }
+    @include break-min(1350px){ padding: 68px 10% 35px 10%; }
+    @include break-min(1500px){ padding: 68px 190px 35px 190px; }
+    @include break-min(laptop-l){ padding: 68px 227px 35px 227px; }
   }
 
   .post-content{
@@ -155,7 +173,9 @@
       }
 
       @include break-min(1150px){ width: 550px; }
-      @include break-min(laptop-l){ right: 230px; }
+      @include break-min(1350px){ right: 10%; }
+      @include break-min(1500px){ right: 190px; }
+      @include break-min(laptop-l){ right: 227px; }
     }
 
     .flickity-slider{
@@ -163,7 +183,7 @@
       img{
         display: block;
         height: 115px;
-        background-color: $accent-color;
+        background-color: $border-color;
         object-fit: cover;
         cursor: pointer;
         margin-right: 10px;
@@ -202,6 +222,7 @@
       left: 0 !important;
       @include size(100%, 100%);
       object-fit: cover;
+      background-color: $border-color;
     }
   }
 
@@ -230,7 +251,9 @@
   }
 
   .post-footer{
+    position: relative;
     display: block;
+    height: auto;
     @include border(solid, 1px 0 0 0, $border-color);
     padding: 41px 0 0 0;
     margin-bottom: 90px;
@@ -292,9 +315,11 @@
   }
 
   .post-share{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     transform: translate(0, 0);
+    right: auto;
 
     &__icon{
       @include flex(row, center);
@@ -402,6 +427,11 @@
     justify-content: center;
     text-align: center;
 
+    @include break-max(1350px){ padding: 0 5%; }
+    @include break-min(1350px){ padding: 0 10%; }
+    @include break-min(1500px){ padding: 0 190px; }
+    @include break-min(laptop-l){ padding: 0 227px; }
+
     &__title{
       width: 90%;
       @include font(30px, 400, $accent-color, $font-primary);
@@ -419,37 +449,42 @@
       margin: 0 auto 48px auto;
 
       @include break-max(tablet-l){ width: 90%; }
-      @include break-min(tablet-l){ width: 45%; }
-      @include break-min(laptop-l){ width: 35%; }
+      @include break-min(tablet-l){ width: 47%; }
     }
 
     &__items{
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      align-items: center;
-      flex-direction: row;
       width: 100%;
+
+      @include break-max(tablet-m){
+        justify-content: center;
+        align-items: center;
+      }
+
+      @include break-min(tablet-m){ justify-content: space-between; }
     }
 
     &__item{
       height: 250px;
       overflow: hidden;
-      margin-bottom: 35px;
 
-      @include break-max(mobile-l){ width: 90%; }
-      @include break-min(mobile-l){ width: 350px; }
-
-      @include break-max(laptop-s){
-        margin-right: 15px;
-        margin-left: 15px;
+      @include break-max(mobile-m) {
+        width: 100%;
+        margin-bottom: 35px;
       }
 
-      @include break-min(laptop-s){
-        &:not(:last-child){
-          margin-right: 30px;
-        }
+      @include break-min(mobile-m){
+        width: 350px;
+        margin: 0 15px 35px 15px;
       }
+
+      @include break-min(tablet-m){
+        width: 32%;
+        margin: 0 0 35px 0;
+      }
+
+      @include break-min(laptop-m){ width: 350px; }
 
       img{
         @include size(100%, 100%);

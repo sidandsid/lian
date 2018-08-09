@@ -5,10 +5,24 @@
   overflow: hidden;
 
   @include break-min(tablet-l){ justify-content: center; }
-  @include break-max(laptop-l){ padding: 70px 5% 0 5%; }
-  @include break-min(laptop-l){ padding: 80px 220px 0 220px; }
 }
 
+.contact-details{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include break-max(tablet-l){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include break-max(1350px){ padding: 70px 5% 0 5%; }
+  @include break-min(1350px){ padding: 70px 10% 0 10%; }
+  @include break-min(1500px){ padding: 70px 190px 0 190px; }
+  @include break-min(laptop-l){ padding: 80px 230px 0 230px; }
+}
 
 .contact-info{
   margin-bottom: 65px;
@@ -17,8 +31,10 @@
   @include break-min(tablet-l){
     width: 35%;
     max-width: 325px;
-    margin-right: 70px;
+    margin-right: 40px;
   }
+
+  @include break-min(laptop-l){ margin-right: 65px; }
 
   &__title{
     @include font(30px, 300, $accent-color, $font-primary);
@@ -80,8 +96,12 @@
   margin-bottom: 80px;
 
   @include break-max(tablet-l){ width: 100%; }
-  @include break-min(tablet-l){ width: 50%; }
-  @include break-min(laptop-l){ width: 750px; }
+  @include break-min(tablet-l){
+    width: 60%;
+    max-width: 750px;
+  }
+
+  @include break-min(1500px){ width: 750px; }
 
   &:before{
     position: absolute;
@@ -115,12 +135,8 @@
 }
 
 .contact-map{
-  height: 360px;
-  margin-bottom: 65px;
-
-  @include break-max(tablet-l){ transform: translate(-5%, 0); }
-  @include break-max(laptop-l){ min-width: 111%; }
-  @include break-min(laptop-l){ min-width: calc(100% + 450px); }
+  @include size(100%, 360px);
+  margin-bottom: 35px;
 
   &__iw-title{
     @include font(14px, 700, #041608, $font-primary);
@@ -155,6 +171,11 @@
   @include flex(column, center);
   width: 100%;
 
+  @include break-max(1350px){ padding: 30px 5% 0 5%; }
+  @include break-min(1350px){ padding: 30px 10% 0 10%; }
+  @include break-min(1500px){ padding: 30px 190px 0 190px; }
+  @include break-min(laptop-l){ padding: 30px 230px 0 230px; }
+
   &__title{
     width: 90%;
     @include font(30px, 400, $accent-color, $font-primary);
@@ -178,25 +199,25 @@
   &__items{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+
+    @include break-max(tablet-s){ justify-content: center; }
+    @include break-min(tablet-s){ justify-content: space-between; }
   }
 
   &__item{
     overflow: hidden;
     margin-bottom: 50px;
 
-    @include break-max(369px){ width: 100%; }
-    @include break-min(370px){ width: 354px; }
-
-    @include break-max(tablet-l){
-      margin-right: 15px;
-      margin-left: 15px;
+    @include break-max(tablet-s){ width: 100%; }
+    @include break-min(tablet-s){ width: 48%; }
+    @include break-min(920px){
+      width: 32%;
+      max-width: 354px;
     }
 
-    @include break-min(tablet-l){
-      &:not(:last-child){
-        margin-right: 35px;
-      }
+    &:last-child{
+      @include break-max(919px){ margin: 0 auto 50px auto; }
     }
   }
 

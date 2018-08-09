@@ -9,7 +9,9 @@
   min-height: 350px;
   overflow: hidden;
 
-  @include break-max(laptop-l){ padding: 50px 5%;}
+  @include break-max(1350px){ padding: 50px 5%; }
+  @include break-min(1350px){ padding: 50px 10%; }
+  @include break-min(1500px){ padding: 50px 190px; }
   @include break-min(laptop-l){ padding: 50px 230px; }
 
   &.portfolio{ background-color: #e2e2e2; }

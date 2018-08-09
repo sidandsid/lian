@@ -2,8 +2,10 @@
   @include flex(column, center);
   background-color: $base-color;
 
-  @include break-max(laptop-l){ padding: 75px 5%; }
-  @include break-min(laptop-l){ padding: 75px 225px; }
+  @include break-max(1350px){ padding: 75px 5%; }
+  @include break-min(1350px){ padding: 75px 10%; }
+  @include break-min(1500px){ padding: 75px 190px; }
+  @include break-min(laptop-l){ padding: 75px 230px; }
 }
 
 .search-page__title{
@@ -23,13 +25,24 @@
   width: 100%;
   max-width: 1140px;
   overflow: hidden;
-  column-count: 3;
-  column-width: $post-width;
-  column-gap: 30px;
   margin: 0 auto;
 
+  @include break-min(tablet-s){
+    column-count: 2;
+    column-width: 50%;
+    column-gap: 20px;
+  }
+
+  @include break-min(tablet-l){
+    column-count: 3;
+    column-width: 30%;
+    column-gap: 1.5%;
+  }
+
   .post{
+    width: 100%;
     break-inside: avoid-column;
+
   }
 
   //Format-related styles

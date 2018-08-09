@@ -2,7 +2,7 @@
     <div class="home-slider js-home-slider">
         <div class="home-slide">
             <img class="home-slide__img" src="<?php echo get_template_directory_uri() . '/assets/images/home-img-1.jpg'; ?>" />
-            <h1 class="home-slide__title">Lorem ipsum dolor sit amet, consectetur adipisicing</h1>
+            <h1 class="home-slide__title">Lorem ipsum dolor sit amet</h1>
             <p class="home-slide__subtitle">Laudantium error, labore laborum nihil impedit</p>
         </div>
         <div class="home-slide">

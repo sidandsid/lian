@@ -7,7 +7,9 @@
 }
 
 .post-wrapper.blog-single{
-  @include break-max(laptop-l){ padding: 35px 5%; }
+  @include break-max(tablet-l){ padding: 35px 5%; }
+  @include break-min(tablet-l){ padding: 35px 10%; }
+  @include break-min(laptop-s){ padding: 35px 15%; }
   @include break-min(laptop-l){ padding: 35px 325px; }
 
   //General styles
@@ -15,12 +17,12 @@
     width: 100%;
     background-color: $base-color;
     margin-bottom: 40px;
-
-    @include break-max(laptop-l){ padding: 0 5%; }
   }
 
   .post-content{
+    max-width: 100%;
     background-color: $base-color;
+    padding: 25px 0 0 0;
 
     h1, h2, h3, h4, h5, h6{
       display: block;
@@ -45,8 +47,8 @@
 
     img{
       display: block;
+      @include size(100%, auto);
       max-width: 100%;
-      height: auto;
       margin: 0 auto;
     }
 
@@ -111,6 +113,7 @@
       letter-spacing: 4.1px;
       text-align: center;
       padding: 0;
+      margin: 0 0 10px 0;
 
       @include break-max(tablet-m){ font-size: 24px; }
     }
@@ -125,7 +128,7 @@
     & > * {
       display: block;
       @include font(14px, 700, $font-color-primary, $font-primary);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
 
       &:not(:last-child){ margin-right: 60px; }
     }
@@ -204,8 +207,23 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80%;
+  width: 100%;
+  max-width: 810px;
   margin: 0 auto;
+
+  @include break-max(tablet-l){ padding: 0 5%; }
+
+  &:before{
+    position: absolute;
+    content: '';
+    @include size(3px, 40px);
+    top: -1px;
+    background-color: #dcdcdc;
+    @include border(solid, 1px 0 1px 1px, #cacaca);
+
+    @include break-max(tablet-l){ left: 5%; }
+    @include break-min(tablet-l){ left: 0; }
+  }
 
   &__title{
     width: 100%;
@@ -225,25 +243,29 @@
     @include break-max(tablet-m){ width: 100%; }
 
     @include break-min(tablet-m){
-      width: 30%;
-      max-width: 250px;
+      width: 31%;
 
-      &:not(:last-of-type){
-        margin-right: 30px;
-      }
+      &:not(:last-of-type){ margin-right: 3.5%; }
     }
+
+    @include break-min(tablet-l){ width: 250px; }
   }
 
   &__textarea{
     @include form-textarea(#c4c4c4);
-    max-width: 810px;
+    width: 100%;
     min-height: 115px;
+    padding: 13px 15px 15px 13px;
     margin-bottom: 20px;
   }
 
   & .submit{
     @extend %form-btn;
+    display: block;
     @include size(195px, 44px);
     margin-bottom: 85px;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 }

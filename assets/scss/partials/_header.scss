@@ -9,11 +9,13 @@
 
   @include break-max(tablet-l){ min-height: 50px; }
   @include break-min(tablet-l){ min-height: 90px; }
-  @include break-max(laptop-l){ padding: 20px 5%; }
+
+  @include break-max(1350px){ padding: 20px 5%; }
+  @include break-min(1350px){ padding: 20px 10%; }
+  @include break-min(1500px){ padding: 20px 190px; }
   @include break-min(laptop-l){ padding: 20px 230px; }
 }
 
-//Header logo
 .header-logo{
   img{
     display: block;
@@ -22,15 +24,14 @@
   }
 }
 
-//Header navigation menu
 .header-nav{
   margin-left: auto;
 
   &__burger{
     @include flex(row, center);
-    @include size(30px, 30px);
+    @include size(25px, 25px);
     cursor: pointer;
-    margin-right: 15px;
+    margin-right: 5px;
 
     @include break-min(tablet-l){ display: none; }
   }
@@ -40,7 +41,7 @@
     display: block;
     @include size(100%, 3px);
     background-color: $icon-color;
-    border-radius: 5px;
+    border-radius: 10px;
     pointer-events: none;
 
     &:before, &:after{
@@ -50,6 +51,7 @@
       left: 0;
       @include size(100%, 3px);
       background-color: $icon-color;
+      border-radius: 10px;
       transition: .4s ;
     }
 
@@ -60,12 +62,12 @@
 
     &.clicked{
       &:before{
-        transform: translate(0, -5px);
+        transform: translate(0, -2px);
         transition: .4s ;
       }
 
       &:after{
-        transform: translate(0, 5px);
+        transform: translate(0, 2px);
         transition: .4s ;
       }
     }
@@ -93,11 +95,6 @@
       opacity: 1;
       @include border(solid, 1px 0 0 0, $border-color);
       transition: .4s;
-
-      //background-color: palegreen;
-      //display: block;
-      //position: absolute;
-      //z-index: 100;
     }
   }
 
@@ -150,7 +147,6 @@
   }
 }
 
-//Header search
 .header-search{
 
   &__icon{
