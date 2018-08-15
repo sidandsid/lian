@@ -1,0 +1,56 @@
+.error404{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper.lost{
+  flex-grow: 1;
+  @include flex(column, center);
+  background-color: $base-color;
+
+  @include break-max(1350px){ padding: 75px 5%; }
+  @include break-min(1350px){ padding: 75px 10%; }
+  @include break-min(1500px){ padding: 75px 190px; }
+  @include break-min(laptop-l){ padding: 75px 230px; }
+}
+
+.lost-title{
+  @extend %main-title;
+  display: block;
+  min-width: 100%;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.lost-subtitle{
+  @extend %main-subtitle;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 160%;
+  margin-bottom: 60px;
+}
+
+.lost-link{
+  position: relative;
+  color: $accent-color;
+  text-decoration: none;
+
+  &:after{
+    position: absolute;
+    content: '';
+    bottom: -1px;
+    left: 0;
+    @include size(93%, 1px);
+    background-color: $accent-color;
+    transition: transform .3s;
+  }
+
+  @include hover{
+    &:after{
+      transform: translate(0, 2px);
+      transition: transform .3s;
+    }
+  }
+}

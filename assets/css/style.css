@@ -305,7 +305,7 @@ template {
 .format-video .post-featured-image, .format-audio .post-featured-image, .format-gallery .post-featured-image, .format-link .post-featured-image, .format-quote .post-featured-image, .format-video .post-meta, .format-audio .post-meta, .format-gallery .post-meta, .format-link .post-meta, .format-quote .post-meta, .format-video .post-title, .format-audio .post-title, .format-gallery .post-title, .format-link .post-title, .format-quote .post-title, .format-video .post-author, .format-audio .post-author, .format-gallery .post-author, .format-link .post-author, .format-quote .post-author, .format-video .post-details, .format-audio .post-details, .format-gallery .post-details, .format-link .post-details, .format-quote .post-details, .format-video .post-footer, .format-audio .post-footer, .format-gallery .post-footer, .format-link .post-footer, .format-quote .post-footer {
   display: none; }
 
-.banner__title, .home-slide__title, .search-page__title {
+.banner__title, .home-slide__title, .search-page__title, .lost-title {
   display: inline-block;
   max-width: 80%;
   font-weight: 300;
@@ -317,34 +317,34 @@ template {
   z-index: 0; }
 
 @media screen and (max-width: tablet-m) {
-  .banner__title, .home-slide__title, .search-page__title {
+  .banner__title, .home-slide__title, .search-page__title, .lost-title {
     max-width: 90%;
     font-size: 24px; } }
 
 @media screen and (max-width: 767px) {
-  .banner__title, .home-slide__title, .search-page__title {
+  .banner__title, .home-slide__title, .search-page__title, .lost-title {
     max-width: 90%;
     font-size: 24px; } }
 
 @media screen and (min-width: tablet-m) {
-  .banner__title, .home-slide__title, .search-page__title {
+  .banner__title, .home-slide__title, .search-page__title, .lost-title {
     max-width: 75%;
     font-size: 34px; } }
 
 @media screen and (min-width: 768px) {
-  .banner__title, .home-slide__title, .search-page__title {
+  .banner__title, .home-slide__title, .search-page__title, .lost-title {
     max-width: 75%;
     font-size: 34px; } }
 
 @media screen and (min-width: laptop-m) {
-  .banner__title, .home-slide__title, .search-page__title {
+  .banner__title, .home-slide__title, .search-page__title, .lost-title {
     font-size: 48px; } }
 
 @media screen and (min-width: 1300px) {
-  .banner__title, .home-slide__title, .search-page__title {
+  .banner__title, .home-slide__title, .search-page__title, .lost-title {
     font-size: 48px; } }
 
-.banner__subtitle, .home-slide__subtitle, .search-page__text {
+.banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
   width: 80%;
   font-weight: 400;
   color: #000;
@@ -355,31 +355,31 @@ template {
   z-index: 0; }
 
 @media screen and (max-width: tablet-m) {
-  .banner__subtitle, .home-slide__subtitle, .search-page__text {
+  .banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
     width: 90%;
     font-size: 14px; } }
 
 @media screen and (max-width: 767px) {
-  .banner__subtitle, .home-slide__subtitle, .search-page__text {
+  .banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
     width: 90%;
     font-size: 14px; } }
 
 @media screen and (min-width: tablet-m) {
-  .banner__subtitle, .home-slide__subtitle, .search-page__text {
+  .banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
     width: 75%;
     font-size: 16px; } }
 
 @media screen and (min-width: 768px) {
-  .banner__subtitle, .home-slide__subtitle, .search-page__text {
+  .banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
     width: 75%;
     font-size: 16px; } }
 
 @media screen and (min-width: laptop-m) {
-  .banner__subtitle, .home-slide__subtitle, .search-page__text {
+  .banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
     font-size: 18px; } }
 
 @media screen and (min-width: 1300px) {
-  .banner__subtitle, .home-slide__subtitle, .search-page__text {
+  .banner__subtitle, .home-slide__subtitle, .search-page__text, .lost-subtitle {
     font-size: 18px; } }
 
 .sidebar-posts h2, .sidebar-tags h2, .sidebar-instagram h2 {
@@ -3118,6 +3118,74 @@ p, span {
   height: 13px;
   fill: #cccccc;
   margin-right: 5px; }
+
+.error404 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+.content-wrapper.lost {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fafafa; }
+
+@media screen and (max-width: 1350px) {
+  .content-wrapper.lost {
+    padding: 75px 5%; } }
+
+@media screen and (min-width: 1350px) {
+  .content-wrapper.lost {
+    padding: 75px 10%; } }
+
+@media screen and (min-width: 1500px) {
+  .content-wrapper.lost {
+    padding: 75px 190px; } }
+
+@media screen and (min-width: laptop-l) {
+  .content-wrapper.lost {
+    padding: 75px 230px; } }
+
+@media screen and (min-width: 1600px) {
+  .content-wrapper.lost {
+    padding: 75px 230px; } }
+
+.lost-title {
+  display: block;
+  min-width: 100%;
+  text-align: center;
+  margin-bottom: 35px; }
+
+.lost-subtitle {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 160%;
+  margin-bottom: 60px; }
+
+.lost-link {
+  position: relative;
+  color: #000;
+  text-decoration: none; }
+
+.lost-link:after {
+  position: absolute;
+  content: '';
+  bottom: -1px;
+  left: 0;
+  width: 93%;
+  height: 1px;
+  background-color: #000;
+  transition: transform .3s; }
+
+@media screen and (min-width: 769px) {
+  .lost-link:hover:after {
+    transform: translate(0, 2px);
+    transition: transform .3s; } }
 
 .content-wrapper.portfolio-single {
   background-color: #fafafa;

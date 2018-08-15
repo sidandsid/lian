@@ -6,7 +6,7 @@
     <title><?php echo get_bloginfo( 'name' ); ?></title>
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?> >
     <!-- Adding svg sprite -->
     <?php get_template_part( 'assets/svg/sprite.svg' ); ?>
 
