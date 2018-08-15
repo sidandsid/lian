@@ -13,6 +13,7 @@
                     get_template_part( '/assets/lib/content-blog', get_post_format() );
                 endwhile; endif;
             ?>
+            <button class="blog-load-btn js-blog-load-btn">load more</button>
         </div>
         <?php get_sidebar(); ?>
      </div>

@@ -1,49 +1,49 @@
 //adding icons to the corresponding links in Footer social-media navigation
 //facebook
-var facebookIcon = ' <svg class="facebook"> ' +
+var $facebookIcon = ' <svg class="facebook"> ' +
     ' <use xlink:href="#facebook"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="facebook.com"]').append(facebookIcon);
+var $facebookLink = $('.footer-sm__nav a[href*="facebook.com"]').append($facebookIcon);
 
 //google
-var googleIcon = ' <svg class="google"> ' +
+var $googleIcon = ' <svg class="google"> ' +
     ' <use xlink:href="#google"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="google.com"]').append(googleIcon);
+var $googleLink = $('.footer-sm__nav a[href*="google.com"]').append($googleIcon);
 
 //twitter
-var twitterIcon = ' <svg class="twitter"> ' +
+var $twitterIcon = ' <svg class="twitter"> ' +
     ' <use xlink:href="#twitter"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="twitter.com"]').append(twitterIcon);
+var $twitterLink = $('.footer-sm__nav a[href*="twitter.com"]').append($twitterIcon);
 
 //linkedin
-var linkedinIcon = ' <svg class="linkedin"> ' +
+var $linkedinIcon = ' <svg class="linkedin"> ' +
     ' <use xlink:href="#linkedin"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="linkedin.com"]').append(linkedinIcon);
+var $linkedinLnk = $('.footer-sm__nav a[href*="linkedin.com"]').append($linkedinIcon);
 
 //dribbble
-var dribbbleIcon = ' <svg class="dribbble"> ' +
+var $dribbbleIcon = ' <svg class="dribbble"> ' +
     ' <use xlink:href="#dribbble"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="dribbble.com"]').append(dribbbleIcon);
+var $dribbbleLink = $('.footer-sm__nav a[href*="dribbble.com"]').append($dribbbleIcon);
 
 //pinterest
-var pinterestIcon = ' <svg class="pinterest"> ' +
+var $pinterestIcon = ' <svg class="pinterest"> ' +
     ' <use xlink:href="#pinterest"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="pinterest.com"]').append(pinterestIcon);
+var $pinterestLnk = $('.footer-sm__nav a[href*="pinterest.com"]').append($pinterestIcon);
 
 //instagram
-var instagramIcon = ' <svg class="instagram"> ' +
+var $instagramIcon = ' <svg class="instagram"> ' +
     ' <use xlink:href="#instagram"></use>' +
     ' </svg> ';
 
-jQuery('.footer-sm__nav a[href*="instagram.com"]').append(instagramIcon);
+var $instagramLink = $('.footer-sm__nav a[href*="instagram.com"]').append($instagramIcon);

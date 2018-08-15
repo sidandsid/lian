@@ -15,6 +15,8 @@
 }
 
 .post-wrapper.blog-page{
+  position: relative;
+
   @include break-max(tablet-m){
     width: 100%;
     margin-bottom: 160px;
@@ -22,12 +24,24 @@
 
   @include break-min(tablet-m){
     width: calc(100% - 360px);
-    margin: 0 15px 80px 0;
+    margin: 0 15px 85px 0;
   }
 
   @include break-min(laptop-m){
     min-width: 750px;
     max-width: 750px;
-    margin-bottom: 100px;
+  }
+
+  .post{
+    display: none;
+  }
+
+  .blog-load-btn{
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    left: 0;
+    @extend %load-btn;
+    margin: 0 auto;
   }
 }
