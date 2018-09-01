@@ -18,6 +18,8 @@
   overflow: hidden;
   margin: 0 auto;
 
+  @include break-max(tablet-m){ margin-top: 40px; }
+
   .post{
     position: relative;
     height: auto;
@@ -86,26 +88,40 @@
   }
 }
 
-.portfolio-filter{
+.portfolio-btn{
   display: flex;
+  align-items: center;
+  width: 100%;
+  @include border(solid, 1px 0 1px 0, $border-color);
+  outline: none;
+  background-color: transparent;
+  @include font(15px, 700, $font-color-primary, $font-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px 0;
+
+  @include break-min(tablet-m){ display: none; }
+}
+
+.portfolio-filter{
   width: 100%;
   max-width: 1140px;
-  @include border(solid, 1px 0 1px 0, $border-color);
   padding-top: 23px;
   margin-bottom: 32px;
 
-  @include break-max(mobile-m){
-    flex-direction: column;
-    align-items: flex-start;
+  @include break-min(mobile-m){
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  @include break-min(mobile-m){
-    flex-direction: row;
-    flex-wrap: wrap;
+  @include break-max(tablet-m){
+    display: none;
+    @include border(solid, 0 0 1px 0, $border-color);
   }
 
   @include break-min(tablet-m){
     justify-content: center;
+    @include border(solid, 1px 0 1px 0, $border-color);
     padding: 23px 5% 0 5%;
   }
 
@@ -120,6 +136,7 @@
     cursor: pointer;
     margin-bottom: 16px;
 
+    @include break-max(mobile-m){ display: block; }
     @include hover-color($accent-color);
 
     &:not(:last-child){

@@ -18,7 +18,9 @@ $(window).resize(function(){
 });
 
 //filter items on button click & adding active class to the clicked btn
-var $portfolioFilter = $('.js-portfolio-filter').on( 'click', 'button', function(){
+var $portfolioFilter = $('.js-portfolio-filter');
+
+$portfolioFilter.on( 'click', 'button', function(){
 
     var filterValue = $(this).attr('data-filter');
     $portfolioGrid.isotope({ filter: filterValue });
@@ -28,6 +30,11 @@ var $portfolioFilter = $('.js-portfolio-filter').on( 'click', 'button', function
 
     $(btnClicked).addClass('active');
     $(btnClickedSibling).removeClass('active');
+});
+
+//mobile btn for filter drop-down
+var $portfolioBtn = $('.js-portfolio-btn').on('click', function(){
+    $portfolioFilter.slideToggle();
 });
 
 //load more btn - src https://codepen.io/bebjakub/pen/jWoYEO

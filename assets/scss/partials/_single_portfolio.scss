@@ -256,11 +256,17 @@
     height: auto;
     @include border(solid, 1px 0 0 0, $border-color);
     padding: 41px 0 0 0;
-    margin-bottom: 90px;
+
+    @include break-min(tablet-m){ margin-bottom: 35px; }
+    @include break-min(laptop-m){ margin-bottom: 70px; }
 
     @include break-min(920px){ width: calc(100% - 510px); }
     @include break-min(1150px){ width: calc(100% - 590px); }
-    @include break-min(laptop-l){ width: 545px; }
+
+    @include break-min(laptop-l){
+      width: 545px;
+      margin-bottom: 90px;
+    }
   }
 
   .post-meta{

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   background-color: $base-color;
+  overflow: hidden;
 
   @include break-max(tablet-m){
     flex-direction: column;

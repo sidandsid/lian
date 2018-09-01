@@ -23,16 +23,40 @@
   }
 
   &__item{
-    position: relative;
-    display: flex;
     padding: 0 25px 25px 25px;
   }
 
+  &__item-link{
+    display: flex;
+    @include size(100%, 100%);
+    text-decoration: none;
+
+    *{ cursor: pointer; }
+
+    @include hover{
+      .sidebar-posts__img{
+        filter: brightness(75%);
+        transition: filter .3s ease;
+      }
+
+      .sidebar-posts__info-title, .sidebar-posts__info-date{
+        color: $accent-color;
+        transition: color .3s ease;
+      }
+    }
+  }
+
   &__img{
+    min-width: 90px;
+    max-width: 90px;
+    height: 65px;
+    background-color: $border-color;
+    overflow: hidden;
     margin-right: 17px;
+    transition: filter .3s ease;
 
     img{
-      @include size(90px, 65px);
+      @include size(100%, 100%);
       object-fit: cover;
       vertical-align: bottom;
     }
@@ -42,8 +66,7 @@
     @include font(16px, 500, #3d3d3d, $font-primary);
     text-decoration: none;
     letter-spacing: 1px;
-
-    @include hover-color($accent-color);
+    transition: color .3s ease;
   }
 
   &__info-date{
@@ -52,6 +75,7 @@
     letter-spacing: 1px;
     padding-top: 18px;
     margin: 0;
+    transition: color .3s ease;
   }
 }
 

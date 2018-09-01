@@ -18,6 +18,7 @@
     </div>
 
     <div class="content-wrapper home-page">
+        <button class="portfolio-btn js-portfolio-btn" type="button">See categories</button>
         <nav class="portfolio-filter js-portfolio-filter">
             <button class="portfolio-filter__btn active" type="button" data-filter=".category-portfolio">All</button>
             <button class="portfolio-filter__btn" type="button" data-filter=".category-logo">Logo</button>

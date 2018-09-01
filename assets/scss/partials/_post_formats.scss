@@ -223,23 +223,62 @@
 
 //Gallery format
 .format-gallery{
-  @extend %post-no-details;
+  position: relative;
 
-  .post-content{
-    overflow: hidden;
-    padding: 0;
+  &:before, &:after{
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translate(2px, calc(-50% - 5px)) rotate(35deg);
+    @include size(17px, 2px);
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 1;
+    margin: 0 auto;
   }
 
-  .more-link{
-    display: none;
+  &:after{
+    transform: translate(2px, calc(-50% + 5px)) rotate(-35deg);
   }
 
-  p{
-    img{
-      @include size(100%, 370px);
-      object-fit: cover;
-      vertical-align: bottom;
+  @include hover{
+    &:before, &:after{ background-color: #fff; }
+
+    .post-featured-image{
+      position: relative;
+
+      &:before{
+        background-color: $accent-color;
+        border-color: $accent-color;
+        transition: background-color .3s ease, border-color .3s ease;
+      }
     }
+  }
+
+  .post-featured-image{
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    &:before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      left: 0;
+      transform: translate(0, -50%);
+      @include size(65px, 65px);
+      border-radius: 50%;
+      border: 1px solid #fff;
+      margin: 0 auto;
+      transition: background-color .3s ease, border-color .3s ease;
+    }
+  }
+
+  .post-meta, .post-title, .post-author, .post-details, .post-content, .post-footer{
+    display: none;
   }
 }
 

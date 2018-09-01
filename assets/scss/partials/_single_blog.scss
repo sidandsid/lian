@@ -184,6 +184,17 @@
   }
 
   .format-gallery{
+
+    &:before, &:after{ display: none; }
+
+    .post-content{
+      display: block;
+    }
+
+    .post-featured-image{
+      display: none;
+    }
+
     p{
       position: relative;
       @include size(100%, auto);

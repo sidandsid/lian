@@ -48,15 +48,17 @@ class lian_recent_post_widget extends WP_Widget_Recent_Posts {
             <ul>
                 <?php while ( $r->have_posts() ) : $r->the_post(); ?>
                     <li class="sidebar-posts__item">
-                        <div class="sidebar-posts__img">
-                            <?php the_post_thumbnail(); ?>
-                        </div>
-                        <span class="sidebar-posts__info">
-                            <a class="sidebar-posts__info-title" href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
-                            <?php if ( $show_date ) : ?>
-                                <span class="sidebar-posts__info-date"><?php echo get_the_date(); ?></span>
-                            <?php endif; ?>
-                        </span>
+                        <a class="sidebar-posts__item-link" href="<?php the_permalink(); ?>">
+                            <div class="sidebar-posts__img">
+                                <?php the_post_thumbnail(); ?>
+                            </div>
+                            <span class="sidebar-posts__info">
+                                <h3 class="sidebar-posts__info-title"><?php get_the_title() ? the_title() : the_ID(); ?></h3>
+                                <?php if ( $show_date ) : ?>
+                                    <span class="sidebar-posts__info-date"><?php echo get_the_date(); ?></span>
+                                <?php endif; ?>
+                            </span>
+                        </a>
                     </li>
                 <?php endwhile; ?>
             </ul>

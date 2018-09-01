@@ -1,17 +1,17 @@
 <div <?php post_class( array( 'post') ) ?> >
-    <div class="post-featured-image">
+    <a class="post-featured-image" href="<?php echo get_permalink($post->ID);?>">
         <?php
-        if ( has_post_thumbnail() ){
-            the_post_thumbnail( 'full' );
+            if ( has_post_thumbnail() ){
+                the_post_thumbnail( 'full' );
             }
         ?>
-    </div>
+    </a>
     <div class="post-content">
         <span class="post-meta">
              <?php
-             if ( get_post_meta( $post->ID, 'Topic', true ) ) {
-                 echo get_post_meta( $post->ID, 'Topic', true );
-             }
+                if ( get_post_meta( $post->ID, 'Topic', true ) ) {
+                    echo get_post_meta( $post->ID, 'Topic', true );
+                }
              ?>
         </span>
         <a class="post-title" href="<?php echo get_permalink($post->ID);?>"><?php the_title(); ?></a>
